@@ -1,0 +1,6 @@
+.bg-section{
+    background-image:linear-gradient(rgb(255, 255, 255) ,  rgba(255, 255, 255, 0.927)) , url('../../assets/images/sketchBg.png');
+    min-height: 100vh;
+    background-size: cover;
+    
+}
