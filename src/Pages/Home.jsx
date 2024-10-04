@@ -5,8 +5,7 @@ import HomeBody from "../components/HomeBody/HomeBody";
 import AboutVision from "../components/AboutComponents/AboutVision";
 import HomeLocation from '../components/HomeLocation/HomeLocation'
 import Footer from '../components/Footer/Footer'
-import Partners from "../components/Partners/Partners";
-import Testimonials from "../components/Testimonials/Testimonials";
+
 import AboutCoreValues from "../components/AboutComponents/AboutCoreValues";
 import HomeServices from "../components/HomeServices/HomeServices";
 import WhyChoose from "../components/WhyChoose";

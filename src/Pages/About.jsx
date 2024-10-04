@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar'
 import AboutHero from '../components/AboutComponents/AboutHero'
 
 import AboutUs from '../components/AboutComponents/AboutUs'
-import Testimonials from '../components/Testimonials/Testimonials'
+
 import AboutVision from '../components/AboutComponents/AboutVision'
 import StanceValue from '../components/AboutComponents/StanceValue'
 import Services from '../components/Services/Services'
