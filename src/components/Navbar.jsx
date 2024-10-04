@@ -47,12 +47,12 @@ const Navbar = () => {
       </nav>
       {isOpen && (
         <div className="top-0 h-[70vh]  w-full flex flex-col justify-center items-center gap-[30px] text-[20px]">
-          <Link to="/">Home</Link>
-          <Link to="/about">About us</Link>
-          <Link to="/location">Locations</Link>
-          <Link to="/services">Services</Link>
-          <Link to="/properties">Properties</Link>
-          <Link to="/contact">Contact us</Link>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/about">About us</NavLink>
+          <NavLink to="/location">Locations</NavLink>
+          <NavLink to="/services">Services</NavLink>
+          <NavLink to="/properties">Properties</NavLink>
+          <NavLink to="/contact">Contact us</NavLink>
         </div>
       )}
     </div>

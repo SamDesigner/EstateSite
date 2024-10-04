@@ -5,8 +5,8 @@ import { FaArrowRight } from "react-icons/fa";
 import {Link} from 'react-router-dom'
 const HomeServices = () => {
   return (
-    <div className='px-[20px] pt-[20px] pb-[50px] md:py-[100px]'>
-        <div className='max-w-[1440px] mx-auto bg-primary rounded-3xl  p-[20px] lg:p-[40px] min-h-[85vh]'>
+    <div className='md:px-[20px] pt-[20px] pb-[50px] md:py-[100px]'>
+        <div className='max-w-[1440px] mx-auto bg-primary md:rounded-3xl  p-[20px] lg:p-[40px] min-h-[85vh]'>
             <div className='flex  flex-col md:flex-row h-[100%] gap-[30px]'>
                 {/* Left Image Comes Here */}
                 <div

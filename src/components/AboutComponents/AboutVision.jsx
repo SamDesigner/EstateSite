@@ -25,8 +25,8 @@ const AboutVision = () => {
         data-aos="fade-up"
         >
           <h2 className="text-[35px] md:text-[50px] leading-[60px] md:leading-[80px] text-gray-600 font-[200] text-center">
-            <span className="text-primary pl-[50px]">
-              To become at all times our{" "}
+            <span className="text-primary md:pl-[50px]">
+            To become at all times our{" "}
             </span>{" "}
             <span className="text-primary">clients’ </span>
             foremost <span className="text-primary">real,estate </span> service
