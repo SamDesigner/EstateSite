@@ -12,6 +12,7 @@ import AboutLeaders from '../components/AboutComponents/AboutLeaders'
 import AboutOffice from '../components/AboutComponents/AboutOffice'
 import AboutCommunity from '../components/AboutComponents/AboutCommunity'
 import AboutFaq from '../components/AboutComponents/AboutFaq'
+import AboutCoreValues from '../components/AboutComponents/AboutCoreValues'
 const About = () => {
   return (
     <div>
@@ -19,7 +20,8 @@ const About = () => {
         <AboutHero />
         <AboutVision />
         <StanceValue />
-        <AboutLeaders />
+        <AboutCoreValues />
+        {/* <AboutLeaders /> */}
         <AboutOffice />
         <Footer /> 
         {/* <AboutCommunity /> */}

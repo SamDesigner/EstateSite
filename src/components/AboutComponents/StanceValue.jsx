@@ -2,7 +2,7 @@ import React from "react";
 import missionImage from  '../../assets/images/missionImage.jpg'
 const StanceValue = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-white py-[40px]">
       <div className="max-w-[1440px] mx-auto">
         {/* Stance Section Starts Here */}
         <div className="">
@@ -18,7 +18,7 @@ const StanceValue = () => {
               <h1 className="text-[30px] lg:text-[50px] font-[200]">What we Stand For</h1>
               <div className="flex flex-col gap-[15px] lg:gap-[30px]">
                 <h3 className="text-[20px] lg:text-[30px] font-[200]">
-                  Our mission is to be the premium choice for exceptional
+                 Our mission is to always go the extra effort at every opportunity in providing  quality service for our client.
                 
                 </h3>
                 <p className="text-gray-400 font-[100]">
@@ -36,7 +36,7 @@ const StanceValue = () => {
         {/* Stance Section Ends Here */}
 
         {/* Values Starts Here */}
-        <div className="flex flex-col lg:flex-row lg:shrink-0">
+        {/* <div className="flex flex-col lg:flex-row lg:shrink-0">
             <div className="flex-1  py-[40px]">
                     <div className="px-[18px] md:px-[30px] flex flex-col gap-[20px]">
                         <h6 className="text-primary">VALUES</h6>
@@ -93,8 +93,10 @@ const StanceValue = () => {
                     <li>Prioritising client needs and exceeding expectations, ensuring satisfaction.</li>
               </ul>
             </div>
+          </div> 
           </div>
-        </div>
+          */}
+        
       </div>
     </div>
   );

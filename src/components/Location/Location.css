@@ -1,0 +1,21 @@
+.location_bg{
+    background: linear-gradient(rgb(255, 255, 255) ,  rgba(255, 255, 255, 0.927)) ,url('../../assets/images/sketchBg.png');
+    background-size: cover;
+}
+
+.bounce_item{
+    position: relative;
+    animation: bounce 2s ease-in-out infinite; 
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0); /* Initial and final position */
+    }
+    40% {
+      transform: translateY(-150px); /* Peak height of the bounce */
+    }
+    60% {
+      transform: translateY(-75px); /* Smaller bounce */
+    }
+}
