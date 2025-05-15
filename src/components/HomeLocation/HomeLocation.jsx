@@ -36,7 +36,7 @@ const HomeLocation = () => {
       <div className=" w-full flex flex-col md:gap-[60px] px-[20px] ">
         {/* First Row of Properties */}
         <div className="grid grid-cols-1 gap-[20px] md:grid-cols-3  w-full">
-          {properties && properties.map((property) => (
+          {properties && properties?.map((property) => (
             <div key={property?._id} className="bg-white p-4 rounded-[10px]">
               {property?.displayImage?.length > 0 ? (
                 <img
