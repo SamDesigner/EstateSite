@@ -1,6 +1,6 @@
 
 import SmallLagos from '../../assets/images/smallLagos.jpg'
-
+import { FaRegBuilding } from "react-icons/fa";
 import "./HomeBody.css";
 const HomeBody = () => {
   return (
@@ -9,6 +9,9 @@ const HomeBody = () => {
       data-aos="fade-up"
       data-aos-duration="1000"
       className=" flex flex-col items-center justify-center px-[20px] md:px-[0px]">
+        <div className='text-primary text-[30px] font-[100]'>
+          <FaRegBuilding />
+        </div>
         <p className="text-primary font-[300] text-[14px]">OUR FIRM</p>
         <h1 className="text-[30px] md:text-[40px] font-[300] md:w-[600px] text-center  ">
           Asset Allocators

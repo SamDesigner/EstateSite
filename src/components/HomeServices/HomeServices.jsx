@@ -49,8 +49,8 @@ const HomeServices = () => {
                             </p>
                         </li>
 
-                        <li  data-aos="fade-left" data-aos-delay='700' className='flex justify-end'>
-                            <Link to='/services' className='flex gap-[10px] items-center'>Learn more <span><FaArrowRight /></span> </Link>
+                        <li  data-aos="fade-left"  className='flex justify-end'>
+                            <Link to='/services' className='flex gap-[10px] items-center text-white'>Learn more <span><FaArrowRight /></span> </Link>
                         </li>
                     </ul>
                 </div>
