@@ -1,7 +1,6 @@
-import React from "react";
+
 import ShowcaseBg from "../../assets/images/showcaseBg.jpg";
-import { MdOutlineWarehouse } from "react-icons/md";
-import { GoArrowRight } from "react-icons/go";
+
 import "./HomeBody.css";
 const HomeBody = () => {
   return (
@@ -23,8 +22,8 @@ const HomeBody = () => {
             className="flex flex-col gap-[30px]"
           >
             <div className="flex flex-col gap-[20px]">
-              <h3 className="text-black text-[20px] lg:text-[25px] font-[300]">
-                A name that has stood tall for years
+              <h3 className="text-black text-[20px] lg:text-[25px] font-[400]">
+              A steady presence in real estate
               </h3>
               <p className="text-gray-700 font-[200] text-justify">
                 We are a reputable firm of Real Estate Practitioners run by a
@@ -37,7 +36,7 @@ const HomeBody = () => {
               </p>
             </div>
 
-            <button className="bg-primary text-black py-[10px] px-[25px] w-fit">
+            <button className="bg-primary text-white py-[10px] px-[25px] w-fit">
               Learn more
             </button>
           </div>

@@ -1,19 +1,20 @@
 import  { useState } from "react";
-import { FaPhoneVolume } from "react-icons/fa6";
-import { FaWhatsapp } from "react-icons/fa";
-import { FiMail } from "react-icons/fi";
-import { FaInstagram } from "react-icons/fa";
+// import { FaPhoneVolume } from "react-icons/fa6";
+// import { FaWhatsapp } from "react-icons/fa";
+// import { FiMail } from "react-icons/fi";
+// import { FaInstagram } from "react-icons/fa";
 import { FaBarsStaggered } from "react-icons/fa6";
-import { FaFacebook } from "react-icons/fa";
+// import { FaFacebook } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
-import NavIcon from '../assets/images/Icons/AAL_MAIN.png'
+import NavIcon from  '../assets/images/Icons/AAL_MAIN.png'
 import '../App.css'
 import { NavLink } from "react-router-dom";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="max-w-[1440px] mx-auto fixed bg-white w-full z-[100] border-b border-gray-200">
-      <nav className="px-[20px] py-[10px] flex bg-white justify-between items-center">
+    <div className="fixed bg-white w-full z-[100] border-b border-gray-200">
+      <nav className="px-[20px] max-w-[1440px] mx-auto  py-[10px] flex bg-white justify-between items-center">
         <div className="h-[60px] ">
           <NavLink to="/">
             <img className="h-full" src={NavIcon} />
@@ -24,6 +25,8 @@ const Navbar = () => {
           <NavLink to="/about">About us</NavLink>
           <NavLink to="/location">Locations</NavLink>
           <NavLink to="/services">Services</NavLink>
+          <NavLink to='/admin/properties'>All Properties</NavLink>
+          <NavLink to='/admin/login'>Admin Auth</NavLink>
        
         </div>
         <div className="flex items-center gap-[20px] text-[16px]">

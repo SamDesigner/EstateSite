@@ -1,0 +1,23 @@
+/* Center the loader on the screen */
+.loader-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+}
+
+/* The spinner itself */
+.loader {
+  border: 5px solid #f3f3f3; /* Light grey background */
+  border-top: 5px solid rgb(49, 145, 119); /* Blue foreground */
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+}
+
+/* Keyframes for spinning animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

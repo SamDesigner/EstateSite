@@ -1,10 +1,33 @@
-import React from "react";
 import "./Contact.css";
 import { FaInstagram } from "react-icons/fa";
-import { FaFacebook } from "react-icons/fa6";
+import { sendContactForm } from "../../api/contactApi";
+import { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 const ContactHero = () => {
+  const [status, setStatus] = useState('');
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+    phoneNo: "",
+  });
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus('Sending...');
+
+    try {
+      const res = await sendContactForm(form);
+      setStatus(res.message);
+      setForm({ name: '', email: '', subject: '', message: '', phoneNo: '' });
+    } catch (err) {
+      setStatus(err.message || 'Failed to send message');
+    }
+  };
   return (
     <div>
       <div className="max-w-[1440px] mx-auto px-[80px] contact_bg flex items-center justify-center">
@@ -87,22 +110,16 @@ const ContactHero = () => {
               Kindly fill all details below
             </p>
           </div>
-          <form className="flex flex-col gap-[20px]">
+          <form  onSubmit={handleSubmit} className="flex flex-col gap-[20px]">
             <div className="flex flex-col md:flex-row gap-[20px] ">
               <div className="flex flex-col gap-[10px] flex-1">
                 <label className="text-[14px] text-gray-400">First Name</label>
                 <input
+                  name="name"
                   className="border rounded-md p-3"
                   type="text"
-                  placeholder="John"
-                  required
-                />
-              </div>
-              <div className="flex flex-col gap-[10px] flex-1">
-                <label className="text-[14px] text-gray-400">Second Name</label>
-                <input
-                  className="border rounded-md p-3"
-                  type="text"
+                  value={form.name}
+                  onChange={handleChange}
                   placeholder="John"
                   required
                 />
@@ -112,8 +129,11 @@ const ContactHero = () => {
               <div className="flex flex-col gap-[10px] flex-1">
                 <label className="text-[14px] text-gray-400">Subject</label>
                 <input
+                  name="subject"
                   className="border rounded-md p-3"
                   type="text"
+                  value={form.subject}
+                  onChange={handleChange}
                   placeholder="Property at Lekki Phase 1"
                   required
                 />
@@ -125,8 +145,11 @@ const ContactHero = () => {
                   Phone Number
                 </label>
                 <input
+                  name="phoneNo"
                   className="border rounded-md p-3"
                   type="text"
+                  value={form.phoneNo}
+                  onChange={handleChange}
                   placeholder="+234 8982302399"
                   required
                 />
@@ -138,20 +161,29 @@ const ContactHero = () => {
                   Email Address
                 </label>
                 <input
+                  name="email"
                   className="border rounded-md p-3"
                   type="email"
                   placeholder="yourmail@mail.com"
                   required
+                  value={form.email}
+                  onChange={handleChange}
                 />
               </div>
             </div>
             <div>
               <div className="flex flex-col gap-[10px] flex-1">
                 <label className="text-[14px] text-gray-400">Message</label>
-                <textarea className="border h-[100px]"></textarea>
+                <textarea
+                  name="message"
+                  className="border h-[100px]"
+                  value={form.message}
+                  onChange={handleChange}
+                ></textarea>
               </div>
             </div>
             <button className="bg-primary py-[10px]">Send</button>
+            <p>{status}</p>
           </form>
         </div>
       </div>

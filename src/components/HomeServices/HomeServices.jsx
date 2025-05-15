@@ -1,7 +1,7 @@
-import React from 'react'
 import serviceGuy from '../../assets/images/serviceGuy.jpg'
 import { MdOutlineSell } from "react-icons/md";
 import { FaArrowRight } from "react-icons/fa";
+import { GiBrickWall } from "react-icons/gi";
 import {Link} from 'react-router-dom'
 const HomeServices = () => {
   return (
@@ -41,6 +41,14 @@ const HomeServices = () => {
                             </span>
                             <p className='text-[20px]'>Advisory Services</p>
                         </li>
+                        <li  data-aos="fade-left" data-aos-delay='600' className='bg-white flex gap-[20px] items-center p-[10px] rounded-tr-[20px] rounded-br-[5px]'>
+                            <span className='bg-primary text-white h-[40px] w-[40px] rounded-[30px] flex items-center justify-center'>
+                                <GiBrickWall />
+                            </span>
+                            <p className='text-[20px]'>Renovation and Redesign.
+                            </p>
+                        </li>
+
                         <li  data-aos="fade-left" data-aos-delay='700' className='flex justify-end'>
                             <Link to='/services' className='flex gap-[10px] items-center'>Learn more <span><FaArrowRight /></span> </Link>
                         </li>

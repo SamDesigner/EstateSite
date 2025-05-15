@@ -1,4 +1,3 @@
-import React from "react";
 import Navbar from "../components/Navbar";
 import Showcase from "../components/Showcase/Showcase";
 import HomeBody from "../components/HomeBody/HomeBody";
@@ -15,11 +14,12 @@ const Home = () => {
       <Navbar />
       <Showcase />
       <HomeBody />
+      <HomeLocation />
       <AboutCoreValues />
       <AboutVision />
       <WhyChoose />
       <HomeServices />
-      <HomeLocation />
+      
       <Footer />
     </div>
   );

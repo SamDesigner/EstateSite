@@ -1,7 +1,7 @@
-import React from "react";
+
 import "./About.css";
 import { GoTelescope } from "react-icons/go";
-import { FaBinoculars } from "react-icons/fa";
+
 const AboutVision = () => {
   return (
     <div className="bg-gray-100">
@@ -14,7 +14,7 @@ const AboutVision = () => {
               <GoTelescope className="text-primary text-[40px] font-[100]" />
               <p className="text-primary font-[300] text-[14px]">OUR VISION</p>
               <h2 className="text-[30px] md:w-[500px] text-center">
-                Transforming spaces to create vibrant, connected communities.
+              Working with you to realize your property goals
               </h2>
               <div className="border-b border-primary  w-[200px]"></div>
             </div>
