@@ -1,5 +1,5 @@
 
-import ShowcaseBg from "../../assets/images/showcaseBg.jpg";
+import SmallLagos from '../../assets/images/smallLagos.jpg'
 
 import "./HomeBody.css";
 const HomeBody = () => {
@@ -14,7 +14,7 @@ const HomeBody = () => {
           Asset Allocators
         </h1>
       </div>
-      <div className="flex flex-col md:flex-row gap-[20px] md:gap-[20px] items-center lg:h-[50vh] px-[20px]">
+      <div className="flex flex-col md:flex-row gap-[20px] md:gap-[20px] items-center lg:h-[80vh] px-[20px]">
         <div className="flex-1  flex flex-col ">
           <div
             data-aos="fade-right"
@@ -41,9 +41,10 @@ const HomeBody = () => {
             </button>
           </div>
         </div>
-        <div className="flex-1 ">
-          <div data-aos="zoom-in" className="">
-            <img className="rounded-[20px]" src={ShowcaseBg} />
+        <div className="flex-1 h-full ">
+          <div data-aos="zoom-in" className="h-full w-full  ">
+            {/* <img className="rounded-[20px]" src={ShowcaseBg} /> */}
+            <img className='rounded-[20px] h-full w-[80%] mx-auto object-cover' src={SmallLagos} />
           </div>
         </div>
       </div>
