@@ -1,3 +1,6 @@
+import PropTypes from 'prop-types';
+
+
 const ServiceSubPage = ({
   serviceNo,
   serviceSubHead,
@@ -30,6 +33,12 @@ const ServiceSubPage = ({
       </div>
     </div>
   );
+};
+ServiceSubPage.propTypes = {
+  serviceNo: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  serviceSubHead: PropTypes.string,
+  serviceHead: PropTypes.string,
+  serviceText: PropTypes.string,
 };
 
 export default ServiceSubPage;
