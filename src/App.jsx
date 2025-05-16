@@ -1,10 +1,15 @@
 import Home from "./Pages/Home";
 import Contact from "./Pages/Contact";
+import AuthLayout from "./layouts/AuthLayout";
 // import Showcase from "./components/Showcase/Showcase"
 import Services from "./Pages/Services";
-import { BrowserRouter as Router, Routes, Route, useLocation} from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import About from "./Pages/About";
-import Properties from "./Pages/Properties";
 import Location from "./Pages/Location";
 import AllProperties from "./Pages/admin/AllProperties";
 import CreateProperty from "./Pages/admin/CreateProperty";
@@ -14,7 +19,7 @@ import Dashboard from "./Pages/admin/Dashboard";
 import { useEffect } from "react";
 import AOS from "aos";
 import Auth from "./Pages/Auth/Auth";
-import Appointment from './Pages/Appointment'
+import Appointment from "./Pages/Appointment";
 import SignUp from "./Pages/Auth/SignUp";
 import "aos/dist/aos.css";
 
@@ -27,7 +32,7 @@ function App() {
     }, [pathname]);
     return null;
   };
-  
+
   useEffect(() => {
     AOS.init();
     AOS.refresh();
@@ -35,18 +40,21 @@ function App() {
   return (
     <div>
       <Router>
-       <ScrollToTop />
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/properties" element={<Properties />} />
           <Route path="/services" element={<Services />} />
           <Route path="/location" element={<Location />} />
           <Route path="/property/:id" element={<PropertyView />} />
+          <Route path="/admin" element={<AuthLayout />}>
+            <Route path="login" element={<Auth />} />
+            <Route path="signup" element={<SignUp />} />
+          </Route>
           <Route path="/admin/login" element={<Auth />} />
           <Route path="/admin/signup" element={<SignUp />} />
-          <Route path='/appointment' element={<Appointment />} />
+          <Route path="/appointment" element={<Appointment />} />
           <Route path="/admin/Dashboard" element={<Dashboard />}>
             <Route path="updateProperty/:id" element={<UpdateProperty />} />
             <Route path="createProperty" element={<CreateProperty />} />

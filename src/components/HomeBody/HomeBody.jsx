@@ -39,7 +39,7 @@ const HomeBody = () => {
               </p>
             </div>
 
-            <button className="bg-primary text-white py-[10px] px-[25px] w-fit">
+            <button className="bg-primary rounded-[5px] text-white py-[10px] px-[25px] w-fit">
               Learn more
             </button>
           </div>

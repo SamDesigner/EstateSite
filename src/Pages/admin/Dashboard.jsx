@@ -56,14 +56,7 @@ const Dashboard = () => {
       <div className="flex-1 flex flex-col">
         <header className="bg-white shadow p-4 flex justify-between items-center">
           <h1 className="text-lg font-semibold">Welcome Back</h1>
-          <div className="flex items-center gap-4">
-            <span className="text-gray-600">User</span>
-            <img
-              src="https://via.placeholder.com/32"
-              alt="avatar"
-              className="rounded-full w-8 h-8"
-            />
-          </div>
+         
         </header>
 
         <main className="flex-1 overflow-auto p-6">

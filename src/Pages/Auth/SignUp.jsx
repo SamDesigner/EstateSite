@@ -52,69 +52,69 @@ const SignUp = () => {
   return (
     <div>
       <div className="max-w-[1440px] mx-auto flex h-[100vh]">
-        <div className="basis-2/3 bg-black h-full bg_image"></div>
-        <div className="basis-1/3 h-full ">
-          <div className="flex flex-col items-center w-full gap-[30px] justify-center h-full">
-            <div className="flex flex-col items-center">
-              <h1 className="text-black text-companyGreen text-[30px] font-[800]">
-                ASSET ALOCATORS
-              </h1>
-              <h4 className="text-[20px]">Sign Up</h4>
-            </div>
-
-            <form
-              onSubmit={signUpAction}
-              className="w-[80%] mx-auto flex flex-col gap-[40px]"
-            >
-              <div className="flex flex-col gap-[20px]">
-                <div className="flex flex-col gap-[10px] w-full">
-                  <label className="text-gray-400 text-[14px]">Username</label>
-                  <input
-                    className="p-[10px] border border-gray-400 border-1 rounded-[5px]"
-                    type="text"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                  />
-                </div>
-                <div className="flex flex-col gap-[10px] w-full">
-                  <label className="text-gray-400 text-[14px]">Email</label>
-                  <input
-                    className="p-[10px] border border-gray-400 border-1 rounded-[5px]"
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                </div>
-                <div className="flex flex-col gap-[10px] w-full">
-                  <label className="text-gray-400 text-[14px]">Password</label>
-                  <input
-                    className="p-[10px] border border-gray-400 border-1 rounded-[5px]"
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                </div>
-              </div>
-              <div>
-                <div className="h-[30px] flex items-center ">
-                  {inputError && (
-                    <p className="text-red-600 ">
-                      Kindly Fill all fields. Before proceeding
-                    </p>
-                  )}
-                </div>
-                <button className="bg-companyGreen text-white w-full p-[10px] rounded-[5px] hover:opacity-[0.9] flex gap-[5px] items-center justify-center">
-                  {isLoading ? <Loader /> : <span>Sign Up</span>}
-                </button>
-              </div>
-              <div>
-                <p className="text-center font-[500]">
-                  <span>Already have an account?</span> <span className="text-companyGreen"><Link to={'/admin/login'}>Log In</Link></span>
-                </p>
-                {/* <Link to='/admin/signup'>Or Sign Up</Link> */}
-              </div>
-            </form>
+        <div className="flex flex-col items-center w-full gap-[30px] justify-center h-full">
+          <div className="flex flex-col items-center">
+            <h1 className="text-black text-companyGreen text-[30px] font-[800]">
+              ASSET ALOCATORS
+            </h1>
+            <h4 className="text-[20px]">Sign Up</h4>
           </div>
+
+          <form
+            onSubmit={signUpAction}
+            className="w-[80%] mx-auto flex flex-col gap-[40px]"
+          >
+            <div className="flex flex-col gap-[20px]">
+              <div className="flex flex-col gap-[10px] w-full">
+                <label className="text-gray-400 text-[14px]">Username</label>
+                <input
+                  className="p-[10px] border border-gray-400 border-1 rounded-[5px]"
+                  type="text"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                />
+              </div>
+              <div className="flex flex-col gap-[10px] w-full">
+                <label className="text-gray-400 text-[14px]">Email</label>
+                <input
+                  className="p-[10px] border border-gray-400 border-1 rounded-[5px]"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+              <div className="flex flex-col gap-[10px] w-full">
+                <label className="text-gray-400 text-[14px]">Password</label>
+                <input
+                  className="p-[10px] border border-gray-400 border-1 rounded-[5px]"
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </div>
+            </div>
+            <div>
+              <div className="h-[30px] flex items-center ">
+                {inputError && (
+                  <p className="text-red-600 ">
+                    Kindly Fill all fields. Before proceeding
+                  </p>
+                )}
+              </div>
+              <button className="bg-companyGreen text-white w-full p-[10px] rounded-[5px] hover:opacity-[0.9] flex gap-[5px] items-center justify-center">
+                {isLoading ? <Loader /> : <span>Sign Up</span>}
+              </button>
+            </div>
+            <div>
+              <p className="text-center font-[500]">
+                <span>Already have an account?</span>{" "}
+                <span className="text-companyGreen">
+                  <Link to={"/admin/login"}>Log In</Link>
+                </span>
+              </p>
+              {/* <Link to='/admin/signup'>Or Sign Up</Link> */}
+            </div>
+          </form>
         </div>
       </div>
     </div>

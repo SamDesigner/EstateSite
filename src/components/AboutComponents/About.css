@@ -1,6 +1,13 @@
 .about_bg{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0,0,0,0.8)) , url('../../assets/images/EstateHome.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0,0,0,0.7)) , url('../../assets/images/aboutBg.jpg');
     height: 70vh;
     background-size: cover;
+    background-position: top;
+}
+.aboutContact_bg{
+    height: 50vh;
+    background-size: cover;
     background-position: center;
+    background-image: linear-gradient(rgba(11, 63, 43, 0.8),rgba(2, 11, 6, 0.7)) , url('../../assets/images/contactImageNew.jpg');
+
 }

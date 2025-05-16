@@ -1,7 +1,7 @@
 
 
 .bg_image{
-    background: url('../../assets/images/AuthBg.jpg');
-    background-position: center;
+    background: linear-gradient(rgba(5, 52, 8, 0.7) , rgba(0,0,0,0.7)),url('../../assets/images/loginStreet.jpg');
+    background-position: bottom;
     background-size: cover;
 }

@@ -1,27 +1,22 @@
-import React from "react";
-import missionImage from  '../../assets/images/missionImage.jpg'
+import { MdRocketLaunch } from "react-icons/md";
 const StanceValue = () => {
   return (
-    <div className="bg-white py-[40px]">
+    <div className=" py-[40px]">
       <div className="max-w-[1440px] mx-auto">
         {/* Stance Section Starts Here */}
-        <div className="">
-          <div className="">
- 
-          </div>
+        <div className="bg-primary ">
+        
           <div className="flex flex-col md:flex-row min-h-[80vh]">
-            <div className="flex-1">
-                <img className="h-full w-full object-cover rounded-tr-[40px]" src={missionImage} />
-            </div>
-            <div className="flex-1 px-[16px] lg:px-[25px] py-[40px] flex flex-col gap-[20px] lg:gap-[40px]">
-              <h6 className="uppercase text-primary text-[12px]">Mission</h6>
-              <h1 className="text-[30px] lg:text-[50px] font-[200]">What we Stand For</h1>
+       
+            <div className="flex-1 px-[16px] lg:px-[25px] py-[40px] flex flex-col gap-[20px] lg:gap-[10px]">
+              <h6 className="uppercase text-white text-[12px]">Our Mission</h6>
+              <h1 className="text-[30px] text-white lg:text-[50px] font-[400] flex gap-[10px] items-center">What we Stand For <span><MdRocketLaunch /></span></h1>
               <div className="flex flex-col gap-[15px] lg:gap-[30px]">
-                <h3 className="text-[20px] lg:text-[30px] font-[200]">
+                <h3 className="text-[20px] text-white lg:text-[30px] font-[400]">
                  Our mission is to always go the extra effort at every opportunity in providing  quality service for our client.
                 
                 </h3>
-                <p className="text-gray-400 font-[100]">
+                <p className="text-white">
                   At Fine & Country we provide the best service to our clients,
                   stakeholders and the property professionals within our
                   network, and beyond. We operate to shape the real estate

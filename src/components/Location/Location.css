@@ -13,9 +13,9 @@
       transform: translateY(0); /* Initial and final position */
     }
     40% {
-      transform: translateY(-150px); /* Peak height of the bounce */
+      transform: translateY(-40px); /* Peak height of the bounce */
     }
     60% {
-      transform: translateY(-75px); /* Smaller bounce */
+      transform: translateY(-50px); /* Smaller bounce */
     }
 }
