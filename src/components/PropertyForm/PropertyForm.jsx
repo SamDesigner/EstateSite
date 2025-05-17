@@ -1,5 +1,6 @@
 import { useState } from "react";
-
+import Loader from "../Loader/Loader"; 
+import { showSuccessToast } from "../../utils/toast";
 const PropertyForm = ({ onSubmit, initialData = {} }) => {
   const [form, setForm] = useState({
     name: initialData?.name || "",
@@ -9,20 +10,26 @@ const PropertyForm = ({ onSubmit, initialData = {} }) => {
   });
   const [displayImage, setDisplayImage] = useState(null);
   const [images, setImages] = useState([]);
-
+  const [isLoading, setIsLoading] = useState(false);
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setIsLoading(true);
     const data = new FormData();
     Object.keys(form).forEach((key) => data.append(key, form[key]));
     if (displayImage) data.append("displayImage", displayImage);
     images.forEach((img) => data.append("images", img));
-
-    onSubmit(data);
+    try {
+       await onSubmit(data);
+      showSuccessToast('Property action completed')
+    } catch (error) {
+      console.error("Error while creating a blog", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-[20px]">
@@ -81,8 +88,12 @@ const PropertyForm = ({ onSubmit, initialData = {} }) => {
         />
       </div>
       <div className="flex items-center justify-center mt-[5vh]">
-        <button type="submit" className="bg-companyGreen text-white w-[350px] p-3 rounded-full">
-          Submit
+        <button
+          type="submit"
+          disabled={isLoading}
+          className="bg-companyGreen text-white w-[350px] p-3 rounded-full"
+        >
+          {isLoading ? <Loader /> : <span>Submit</span>}
         </button>
       </div>
     </form>

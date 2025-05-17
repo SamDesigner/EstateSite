@@ -1,8 +1,7 @@
 
-import { CiFacebook } from "react-icons/ci";
 import { SiInstagram } from "react-icons/si";
 import { FaWhatsapp } from "react-icons/fa";
-import { GrLinkedin } from "react-icons/gr";
+
 import {Link} from 'react-router-dom'
 import './Footer.css'
 const Footer = () => {
@@ -19,7 +18,7 @@ const Footer = () => {
             <h1 className="text-white text-[30px] font-[400]">Quick Link</h1>
             <ul className="text-white font-[100] flex flex-col gap-[10px]">
               <li>
-                <Link to='#'>About Us</Link>
+                <Link to='/about'>About Us</Link>
               </li>
               <li>
                 <Link to='#'>Properties</Link>
@@ -46,10 +45,13 @@ const Footer = () => {
         <div className="flex justify-between items-center mt-[40px]" >
             <p className="text-white text-[14px] font-[100]">Copyright Asset Allocators &copy; All Rights Reserved {new Date().getFullYear()}</p>
             <div className="text-white font-[100] flex items-center gap-[20px] text-[20px]">
-                <CiFacebook />
-                <SiInstagram />
+                {/* <CiFacebook /> */}
+                <a href="https://www.instagram.com/assetallocatorsltd/">
+                    <SiInstagram />
+                </a>
+                {/*  */}
                 <FaWhatsapp />
-                <GrLinkedin />
+                {/* <GrLinkedin /> */}
             </div>
         </div>
       </div>

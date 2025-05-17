@@ -72,7 +72,7 @@ const Auth = () => {
               <input
                 name="password"
                 className="p-[10px] border border-gray-400 border-1 rounded-[5px]"
-                type="text"
+                type="password"
                 placeholder="******"
                 onChange={handleChange}
               />

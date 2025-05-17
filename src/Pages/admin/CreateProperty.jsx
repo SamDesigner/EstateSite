@@ -14,7 +14,7 @@ const CreateProperty = () => {
   return (
     <>
       <div className="py-[30px] text-center">
-        <h1 className="text-[30px] text-companyGreen">Create A Property</h1>
+        <h1 className="text-[30px] text-black font-[500]">Create A Property</h1>
       </div>
       <PropertyForm onSubmit={handleCreate} />
     </>
