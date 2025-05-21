@@ -13,7 +13,7 @@ import Loader from "../Loader/Loader";
 const PropertyView = () => {
   const { id } = useParams();
   const [property, setProperty] = useState(null);
-  const BASE_URL = import.meta.env.VITE_API_URL;
+  // const BASE_URL = import.meta.env.VITE_API_URL;
   const [isLoading, setIsLoading] = useState(false);
   const phoneNumber = +2348075210272;
   const { isOpen, open } = useGeneralStore();
@@ -103,7 +103,7 @@ const PropertyView = () => {
           <div className="flex-1">
             <img
               className="fit-cover h-[60vh] w-full object-cover "
-              src={`${BASE_URL}/uploads/${property?.displayImage}`}
+              src={property?.displayImage}
             />
             <div className="flex flex-col gap-[10px] mt-[20px]">
               <div className="flex gap-[20px]">
@@ -111,7 +111,7 @@ const PropertyView = () => {
                   <img
                     className="h-[100px] w-[100px] object-cover "
                     key={index}
-                    src={`${BASE_URL}/uploads/${propertyImage}`}
+                    src={propertyImage}
                   />
                 ))}
               </div>

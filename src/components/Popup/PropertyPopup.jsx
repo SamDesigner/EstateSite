@@ -9,8 +9,9 @@ import { FaArrowLeft } from "react-icons/fa";
 import { GiCancel } from "react-icons/gi";
 import useGeneralStore from '../../stores/useGeneral'
 import { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 const PropertyPopup = ({ data }) => {
-  const BASE_URL = import.meta.env.VITE_API_URL;
+  // const BASE_URL = import.meta.env.VITE_API_URL;
 
   const {close} = useGeneralStore()
   const prevRef = useRef(null);
@@ -43,7 +44,7 @@ const PropertyPopup = ({ data }) => {
               <SwiperSlide key={index}>
                 <img
                   className="object-cover  w-[90%] h-[80vh] mx-auto rounded-[10px]"
-                  src={`${BASE_URL}/uploads/${dataItem}`}
+                  src={dataItem}
                 />
               </SwiperSlide>
             ))}
@@ -54,3 +55,7 @@ const PropertyPopup = ({ data }) => {
 };
 
 export default PropertyPopup;
+
+PropertyPopup.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.string).isRequired,
+};

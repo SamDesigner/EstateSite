@@ -12,7 +12,7 @@ const AllProperties = () => {
   const { fetchProperties, loading, properties } = usePropertyStore();
   const [propertyItem, setPropertyItem] = useState([]);
   
-  const BASE_URL = import.meta.env.VITE_API_URL;
+
   useEffect(() => {
     // if (properties.length === 0) {
      
@@ -54,7 +54,7 @@ const AllProperties = () => {
           <div key={property._id} className="bg-white p-4 rounded-[10px]">
             {property?.displayImage?.length > 0 ? (
               <img
-                src={`${BASE_URL}/uploads/${property.displayImage}`} // Ensure the path is correct
+                src={property?.displayImage} // Ensure the path is correct
                 alt={property.name} // Add alt text for accessibility
                 className="h-[200px] w-full object-cover rounded-[10px]"
                 onError={(e) => {
@@ -80,11 +80,11 @@ const AllProperties = () => {
               <h3 className="text-[12px] text-companyGreen font-[500] mt-[10px]">
                 Description
               </h3>
-              <p className="text-[14px] h-[15vh]">
+              <div className="text-[14px] h-[15vh]">
                 {" "}
                 {property?.description.split(" ").slice(0, 10).join(" ")}
                 <p className="text-companyGreen">{property?.description.split(" ").length > 20 && "..."}</p>
-              </p>
+              </div>
             </div>
 
             <div className="flex items-center justify-between">

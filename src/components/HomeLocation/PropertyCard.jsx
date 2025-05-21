@@ -9,19 +9,17 @@ const PropertyCard = ({ property }) => {
     <div className="bg-white p-4 rounded-[10px]">
       {property?.displayImage?.length > 0 ? (
         <img
-          src={`${BASE_URL}/uploads/${property?.displayImage}`} // Ensure the path is correct
+          src={property?.displayImage} // Ensure the path is correct
           alt={property?.name} // Add alt text for accessibility
           className="h-[200px] w-full object-cover rounded-[10px]"
-          onError={(e) => {
-            e.target.onerror = null; // Prevents looping
-            e.target.src = "path/to/placeholder/image.jpg"; // Fallback image
-          }}
+
         />
       ) : (
-        <img
-          src="path/to/placeholder/image.jpg" // Fallback image if no displayImage
-          alt="Placeholder" // Alt text for placeholder
-        />
+        <h1>Hi</h1>
+        // <img
+        //   src="path/to/placeholder/image.jpg" // Fallback image if no displayImage
+        //   alt="Placeholder" // Alt text for placeholder
+        // />
       )}
       <div className="py-[10px]">
         <h3 className="text-[20px] font-[500]">{property?.name}</h3>

@@ -9,7 +9,7 @@ const HomeLocation = () => {
     try {
       const response = await getProperties();
       setProperties(response);
-      console.log("Properties have been gotten");
+      console.log("Properties have been gotten", response);
     } catch (error) {
       console.error("There was an error while getting properties", error);
     }
