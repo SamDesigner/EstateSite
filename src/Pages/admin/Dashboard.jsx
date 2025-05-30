@@ -13,6 +13,7 @@ import { MdOutlineCancel } from "react-icons/md";
 const Dashboard = () => {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(true);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const navLinks = [
     {
       label: "Dashboard",
@@ -36,10 +37,10 @@ const Dashboard = () => {
   const isActive = (path) => location.pathname === path;
   return (
     <div className="flex h-screen bg-gray-100 ">
-      {isOpen && (
+      {mobileOpen && (
         <aside className="w-full z-[500] fixed h-screen bg-[rgba(0,0,0,0.5)] md:hidden">
           <span
-            onClick={() => setIsOpen(false)}
+            onClick={() => setMobileOpen(false)}
             className="absolute right-[2%] top-[3%] bg-red-600 text-white p-[10px] text-[30px] rounded-full"
           >
             <MdOutlineCancel />
@@ -109,7 +110,7 @@ const Dashboard = () => {
 
       <div className="flex-1 flex flex-col">
         <header className="bg-white shadow p-4 flex justify-between items-center">
-          <div onClick={() => setIsOpen(!isOpen)} className="cursor-pointer">
+          <div onClick={() => setIsOpen(!isOpen)} className="cursor-pointer hidden md:flex">
             {isOpen ? (
               <span>
                 <GiHamburgerMenu />
@@ -119,11 +120,13 @@ const Dashboard = () => {
                 <span className="hidden md:block">
                   <FaArrowRight />
                 </span>
-                <span className="md:hidden">
-                  <GiHamburgerMenu />
-                </span>
               </>
             )}
+          </div>
+          <div onClick={() => {setMobileOpen(!mobileOpen)}}>
+            <span className="md:hidden">
+              <GiHamburgerMenu />
+            </span>
           </div>
           <h1 className="text-lg font-semibold">Welcome Back</h1>
         </header>
