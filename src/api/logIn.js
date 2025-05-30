@@ -8,9 +8,12 @@ export const userLogin = async (email, password) => {
             email,
             password
         });
+        console.log('Response from the login Page', response.data);
+        const token = response.data.token;
+        localStorage.setItem("token", token)
         return response.data
     }catch(error){
-        console.error('There was an error while trying to signup',error);
+        console.error('There was an error while trying to signup', error);
         return error
     }
 

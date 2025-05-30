@@ -33,7 +33,7 @@ const SignUp = () => {
       }
 
       if (response && response.token) {
-        navigate("/admin/Dashboard");
+        navigate("/admin/login");
       }
 
       // alert( response.data.message)

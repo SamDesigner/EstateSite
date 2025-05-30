@@ -22,7 +22,7 @@ import Auth from "./Pages/Auth/Auth";
 import Appointment from "./Pages/Appointment";
 import SignUp from "./Pages/Auth/SignUp";
 import "aos/dist/aos.css";
-
+import ProtectedRoute from "./components/ProtectedRoute";
 // import ScrollToTop from "./ScrollToTop";
 function App() {
   const ScrollToTop = () => {
@@ -55,7 +55,8 @@ function App() {
           <Route path="/admin/login" element={<Auth />} />
           <Route path="/admin/signup" element={<SignUp />} />
           <Route path="/appointment" element={<Appointment />} />
-          <Route path="/admin/Dashboard" element={<Dashboard />}>
+          <Route path="/admin/Dashboard" element={<ProtectedRoute />}>
+            <Route index element={<Dashboard />} />
             <Route path="updateProperty/:id" element={<UpdateProperty />} />
             <Route path="createProperty" element={<CreateProperty />} />
             <Route path="properties" element={<AllProperties />} />

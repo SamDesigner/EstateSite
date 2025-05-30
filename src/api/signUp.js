@@ -7,6 +7,8 @@ export const userSignUp = async (name, email, password) => {
             email,
             password
         });
+        // const token = response.data.token;
+     
         return response.data
     }catch(error){
         console.error('There was an error while trying to signup',error);
