@@ -26,7 +26,7 @@ const PropertyPopup = ({ data }) => {
         <div onClick={close} className="absolute cursor-pointer top-[5%] right-[2%] bg-white text-black p-[15px] rounded-full text-[20px]">
             <GiCancel />
         </div>
-      <div onClick={(e) => e.stopPropagation()} className="bg-white rounded-[10px] h-[90vh] w-[70%] flex items-center justify-center ">
+      <div onClick={(e) => e.stopPropagation()} className="bg-white rounded-[10px] h-[90vh] w-full md:w-[70%] flex items-center justify-center ">
       <button ref={prevRef} className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-gray-200 p-[20px]  rounded-full"><FaArrowLeft /></button>
       <button ref={nextRef} className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-gray-200 p-[20px]  rounded-full"><FaArrowRight /></button>
         <Swiper
@@ -43,7 +43,7 @@ const PropertyPopup = ({ data }) => {
             data.map((dataItem, index) => (
               <SwiperSlide key={index}>
                 <img
-                  className="object-cover  w-[90%] h-[80vh] mx-auto rounded-[10px]"
+                  className="object-cover  w-[90%] h-[40vh] md:h-[80vh] mx-auto rounded-[10px]"
                   src={dataItem}
                 />
               </SwiperSlide>

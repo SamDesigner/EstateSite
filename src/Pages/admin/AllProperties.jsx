@@ -49,7 +49,7 @@ const AllProperties = () => {
         </div>
       )}
 
-      <div className="grid grid-cols-3 gap-[20px]">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-[20px]">
         {properties.map((property) => (
           <div key={property._id} className="bg-white p-4 rounded-[10px]">
             {property?.displayImage?.length > 0 ? (
@@ -80,7 +80,7 @@ const AllProperties = () => {
               <h3 className="text-[12px] text-companyGreen font-[500] mt-[10px]">
                 Description
               </h3>
-              <div className="text-[14px] h-[15vh]">
+              <div className="text-[14px] h-[80px]  lg:h-[15vh]">
                 {" "}
                 {property?.description.split(" ").slice(0, 10).join(" ")}
                 <p className="text-companyGreen">{property?.description.split(" ").length > 20 && "..."}</p>

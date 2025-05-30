@@ -15,7 +15,7 @@ const PropertyView = () => {
   const [property, setProperty] = useState(null);
   // const BASE_URL = import.meta.env.VITE_API_URL;
   const [isLoading, setIsLoading] = useState(false);
-  const phoneNumber = +2348075210272;
+  const phoneNumber =  +2348033064524;
   const { isOpen, open } = useGeneralStore();
   const message = encodeURIComponent(
     `Hello I am chatting you from the Asset Allocators site, I am instrested in ${property?.name} property located in ${property?.location}`
@@ -47,7 +47,7 @@ const PropertyView = () => {
           PROPERTY DETAILS
         </h1>
       </div>
-      <div className="flex gap-[30px] ">
+      <div className="flex flex-col md:flex-row gap-[30px] ">
         <div className="flex-1 flex flex-col gap-[10px]">
           <div>
             <h1 className="text-[40px] font-[600]">{property?.name}</h1>
@@ -74,9 +74,9 @@ const PropertyView = () => {
             </h3>
             <p className="text-justify">{property?.description}</p>
           </div>
-          <div className="flex gap-[10px] mt-[10px]">
-            <a href={whatsappLink} target="_blank">
-              <button className="bg-companyGreen p-2 text-white font-[500] rounded-[5px] flex gap-[5px] items-center">
+          <div className="flex flex-col md:flex-row gap-[10px] mt-[10px]">
+            <a className="w-full " href={whatsappLink} target="_blank">
+              <button className="bg-companyGreen p-2 w-full text-white font-[500] flex gap-[5px] items-center justify-center rounded-full">
                 {" "}
                 <span className="text-[20px]">
                   <IoLogoWhatsapp />
@@ -85,7 +85,7 @@ const PropertyView = () => {
               </button>
             </a>
             <Link to="/appointment">
-              <button className="w-fit bg-blue-400 text-white p-2 flex gap-[5px] items-center rounded-[5px]">
+              <button className="w-fit bg-blue-400 w-full text-white p-2 flex gap-[5px] items-center justify-center  rounded-full">
                 <span>
                   <FaRegAddressBook />
                 </span>{" "}

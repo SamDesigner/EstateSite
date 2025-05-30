@@ -5,14 +5,15 @@ const Appointment = () => {
   return (
     <div>
       <Navbar />
-      <div className="showcase_bg h-[60vh] bg-fixed flex flex-col items-center justify-center text-white text-[40px] font-[500] gap-[10px]">
-            <h1>Book An Appointment</h1>
-            <p className="text-[14px] w-[500px] text-center">Easily schedule your visit with a few clicks. Book your appointment today for personalized care that fits your schedule!</p>
+      <div className="showcase_bg h-[60vh] bg-fixed flex flex-col items-center justify-center text-white px-[16px] text-[40px] font-[500] gap-[10px]">
+            <h1 className="text-center ">Book An Appointment</h1>
+            <p className="text-[14px] w-[300px] md:w-[500px] text-center">Easily schedule your visit with a few clicks. Book your appointment today for personalized care that fits your schedule!</p>
         </div>
-      <div className="py-[100px] flex flex-col gap-[20px] px-[150px]">
-        <h1 className="text-center text-[20px] text-center font-[500]">Kindly Fill the Form Below</h1>
-        <form className="flex flex-col gap-[20px]">
-          <div className="grid grid-cols-2 gap-[20px]">
+      <div className="py-[100px] flex flex-col gap-[20px] px-[20px] lg:px-[150px]">
+        <h1 className="text-center text-[20px]  font-[500]">Kindly Fill the Form Below</h1>
+        <div>
+        <form className="flex flex-col gap-[20px]  w-full">
+          <div className="grid md:grid-cols-2 gap-[20px]">
             <input
               placeholder="Full Name"
               required
@@ -55,6 +56,7 @@ const Appointment = () => {
             </button>
           </div>
         </form>
+        </div>
       </div>
       <Footer />
     </div>

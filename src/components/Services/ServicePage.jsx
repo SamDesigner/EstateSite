@@ -4,11 +4,11 @@ const ServicePage = () => {
   return (
     <div className="max-w-[1440px] mx-auto h-auto">
 
-      <div className=" w-full flex flex-col-reverse service_bg px-[40px] gap-[30px] pt-[300px] pb-[40px]">
+      <div className=" w-full flex flex-col-reverse service_bg px-[20px] lg:px-[40px] gap-[30px] pt-[300px] pb-[40px]">
   
         <div className="flex-1 text-white">
           <h1 className="text-white text-[40px] font-[500]">Our Services</h1>
-          <p className="w-[700px] text-justify">
+          <p className="md:w-[700px] text-justify">
             We are commited to excellence in the services we provided and in the
             results we attain for clients. We achieve the highest quality of
             delivery bt attractingm developing and the best professionalsand

@@ -13,7 +13,7 @@ const LocationShowcase = () => {
   }, []);
   return (
     <div>
-      <div className="location_bg h-[70vh] md:h-[70vh] flex items-center justify-center">
+      <div className="location_bg h-[50vh] md:h-[70vh] flex items-center justify-center">
         <div className="flex items-center justify-center flex-col">
           <TiLocation className="bounce_item text-[35px] text-primary" />
           <h1 className="text-primary text-[40px] md:text-[80px] font-[600] uppercase">
@@ -24,7 +24,7 @@ const LocationShowcase = () => {
       {/* Here the picture of the properties go in here */}
       <div className="px-[16px] md:px-[30px] py-[80px]">
         {loading && <Loader />}
-        <div className="grid grid-cols-3 gap-[20px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[20px]">
           {properties.map((property) => (
             <PropertyCard key={property._id} property={property} />
           ))}

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Navbar from '../components/Navbar'
 import ContactHero from '../components/ContactComponents/ContactHero'
 import  Footer from '../components/Footer/Footer'

@@ -2,7 +2,7 @@ import PropertyForm from "../../components/PropertyForm/PropertyForm";
 import { updateProperty, getProperty } from "../../api/propertyApi";
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-
+import Loader from "../../components/Loader/Loader";
 const UpdateProperty = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -11,7 +11,10 @@ const UpdateProperty = () => {
   const updateEstateProperty = async (formData) => {
     try {
       const response = await updateProperty(id, formData);
-      console.log("This was the response while updating the property", response);
+      console.log(
+        "This was the response while updating the property",
+        response
+      );
       navigate("/Dashboard");
     } catch (error) {
       console.error("Error while updating property:", error);
@@ -33,11 +36,13 @@ const UpdateProperty = () => {
   }, [id]);
 
   // Don't render the form until data is fetched
-  if (!singleProperty) return <p>Loading...</p>;
+  if (!singleProperty) return <div className={`flex items-center justify-center`}><Loader /></div>;
 
   return (
     <div>
-      <h1>Update Property</h1>
+      <div className="py-[30px] text-center">
+        <h1 className="text-[30px] text-black font-[500]">Update Property</h1>
+      </div>
       <PropertyForm
         onSubmit={updateEstateProperty}
         initialData={singleProperty}

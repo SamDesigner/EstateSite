@@ -182,7 +182,7 @@ const ContactHero = () => {
                 ></textarea>
               </div>
             </div>
-            <button className="bg-primary py-[10px]">Send</button>
+            <button className="bg-primary py-[10px] text-white rounded-full">Send</button>
             <p>{status}</p>
           </form>
         </div>

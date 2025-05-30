@@ -33,7 +33,7 @@ const PropertyForm = ({ onSubmit, initialData = {} }) => {
   };
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-[20px]">
-      <div className="grid grid-cols-2 gap-[20px]">
+      <div className="grid md:grid-cols-2 gap-[20px]">
         <input
           name="name"
           value={form.name}
