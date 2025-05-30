@@ -1,33 +1,40 @@
 import "./Contact.css";
 import { FaInstagram } from "react-icons/fa";
-import { sendContactForm } from "../../api/contactApi";
+import { useRef } from "react";
 import { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import emailjs from "@emailjs/browser";
+import { showSuccessToast, showErrorToast } from "../../utils/toast";
+import Loader from '../Loader/Loader'
 const ContactHero = () => {
-  const [status, setStatus] = useState('');
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-    phoneNo: "",
-  });
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-  const handleSubmit = async (e) => {
+  const form = useRef();
+  const [isLoading, setIsLoading] = useState(false);
+  const sendEmail = (e) => {
     e.preventDefault();
-    setStatus('Sending...');
-
-    try {
-      const res = await sendContactForm(form);
-      setStatus(res.message);
-      setForm({ name: '', email: '', subject: '', message: '', phoneNo: '' });
-    } catch (err) {
-      setStatus(err.message || 'Failed to send message');
-    }
+    setIsLoading(true)
+    emailjs
+      .sendForm(
+        "service_nfcrqip", 
+        "template_u3pbyir", 
+        form.current,
+        "MltiYLOsvBs_FIcXY"
+      )
+      .then(
+        (result) => {
+          console.log("Email sent successfully!", result.text);
+          showSuccessToast('Message Sent Successfully');
+          setIsLoading(false);
+          form.current.reset();
+        },
+        (error) => {
+          console.error("Email send error:", error.text);
+          showErrorToast('An Error Occured, Try Again!!!!');
+          setIsLoading(false);
+        }
+      );
   };
+
   return (
     <div>
       <div className="max-w-[1440px] mx-auto px-[80px] contact_bg flex items-center justify-center">
@@ -110,17 +117,15 @@ const ContactHero = () => {
               Kindly fill all details below
             </p>
           </div>
-          <form  onSubmit={handleSubmit} className="flex flex-col gap-[20px]">
+          <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-[20px]">
             <div className="flex flex-col md:flex-row gap-[20px] ">
               <div className="flex flex-col gap-[10px] flex-1">
-                <label className="text-[14px] text-gray-400">First Name</label>
+                <label className="text-[14px] text-gray-400">Full Name</label>
                 <input
-                  name="name"
                   className="border rounded-md p-3"
                   type="text"
-                  value={form.name}
-                  onChange={handleChange}
                   placeholder="John"
+                  name='fullName'
                   required
                 />
               </div>
@@ -132,8 +137,6 @@ const ContactHero = () => {
                   name="subject"
                   className="border rounded-md p-3"
                   type="text"
-                  value={form.subject}
-                  onChange={handleChange}
                   placeholder="Property at Lekki Phase 1"
                   required
                 />
@@ -148,8 +151,6 @@ const ContactHero = () => {
                   name="phoneNo"
                   className="border rounded-md p-3"
                   type="text"
-                  value={form.phoneNo}
-                  onChange={handleChange}
                   placeholder="+234 8982302399"
                   required
                 />
@@ -161,13 +162,12 @@ const ContactHero = () => {
                   Email Address
                 </label>
                 <input
-                  name="email"
+                  name="emailAddress"
                   className="border rounded-md p-3"
                   type="email"
                   placeholder="yourmail@mail.com"
                   required
-                  value={form.email}
-                  onChange={handleChange}
+
                 />
               </div>
             </div>
@@ -176,14 +176,16 @@ const ContactHero = () => {
                 <label className="text-[14px] text-gray-400">Message</label>
                 <textarea
                   name="message"
-                  className="border h-[100px]"
-                  value={form.message}
-                  onChange={handleChange}
+                  className="border h-[100px] p-2"
+                  required
                 ></textarea>
               </div>
             </div>
-            <button className="bg-primary py-[10px] text-white rounded-full">Send</button>
-            <p>{status}</p>
+            <button className="bg-primary py-[10px] text-white rounded-full flex justify-center items-center gap-[10px]">
+             {isLoading && <Loader /> }
+              {!isLoading && <span>Send</span> }
+            </button>
+            
           </form>
         </div>
       </div>

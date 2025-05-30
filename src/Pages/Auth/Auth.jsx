@@ -84,7 +84,7 @@ const Auth = () => {
                 Kindly Fill all fields. Before proceeding
               </p>
             )}
-            <button className="bg-companyGreen  text-white w-full p-[10px] rounded-[5px] hover:opacity-[0.9]">
+            <button className="bg-companyGreen rounded-full  text-white w-full p-[10px] rounded-[5px] hover:opacity-[0.9]">
               {isLoading ? <Loader /> : <span>Log In</span>}
             </button>
           </div>

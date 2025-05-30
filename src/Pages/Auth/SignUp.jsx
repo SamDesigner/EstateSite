@@ -101,7 +101,7 @@ const SignUp = () => {
                   </p>
                 )}
               </div>
-              <button className="bg-companyGreen text-white w-full p-[10px] rounded-[5px] hover:opacity-[0.9] flex gap-[5px] items-center justify-center">
+              <button className="bg-companyGreen rounded-full text-white w-full p-[10px] rounded-[5px] hover:opacity-[0.9] flex gap-[5px] items-center justify-center">
                 {isLoading ? <Loader /> : <span>Sign Up</span>}
               </button>
             </div>
