@@ -15,7 +15,7 @@ const PropertyView = () => {
   const [property, setProperty] = useState(null);
   // const BASE_URL = import.meta.env.VITE_API_URL;
   const [isLoading, setIsLoading] = useState(false);
-  const phoneNumber =  +2348033064524;
+  const phoneNumber = +2348033064524;
   const { isOpen, open } = useGeneralStore();
   const message = encodeURIComponent(
     `Hello I am chatting you from the Asset Allocators site, I am instrested in ${property?.name} property located in ${property?.location}`
@@ -23,7 +23,7 @@ const PropertyView = () => {
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${message}`;
 
   const getSingleProperty = async () => {
-    setIsLoading(true)
+    setIsLoading(true);
     try {
       const response = await getProperty(id);
 
@@ -31,8 +31,8 @@ const PropertyView = () => {
       console.log("This is the details for the single property", response);
     } catch (error) {
       console.error("There was an error while getting single property", error);
-    }finally{
-      setIsLoading(false)
+    } finally {
+      setIsLoading(false);
     }
   };
   useEffect(() => {
@@ -75,23 +75,27 @@ const PropertyView = () => {
             <p className="text-justify">{property?.description}</p>
           </div>
           <div className="flex flex-col md:flex-row gap-[10px] mt-[10px]">
-            <a className="w-full " href={whatsappLink} target="_blank">
-              <button className="bg-companyGreen p-2 w-full text-white font-[500] flex gap-[5px] items-center justify-center rounded-full">
-                {" "}
-                <span className="text-[20px]">
-                  <IoLogoWhatsapp />
-                </span>{" "}
-                <span>Text us on Whatsapp</span>
-              </button>
-            </a>
-            <Link to="/appointment">
-              <button className="w-fit bg-blue-400 w-full text-white p-2 flex gap-[5px] items-center justify-center  rounded-full">
-                <span>
-                  <FaRegAddressBook />
-                </span>{" "}
-                Book an Appointment
-              </button>
-            </Link>
+            <div className=" flex-1 " >
+              <a href={whatsappLink} target="_blank">
+                <button className="bg-companyGreen p-2 w-full text-white font-[500] flex gap-[5px] items-center justify-center rounded-full">
+                  {" "}
+                  <span className="text-[20px]">
+                    <IoLogoWhatsapp />
+                  </span>{" "}
+                  <span>Text us on Whatsapp</span>
+                </button>
+              </a>
+            </div>
+            <div className=" flex-1 " >
+              <Link to="/appointment">
+                <button className=" flex-1 bg-blue-400 w-full text-white p-2 flex gap-[5px] items-center justify-center  rounded-full">
+                  <span>
+                    <FaRegAddressBook />
+                  </span>{" "}
+                  Book an Appointment
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
         {isLoading ? (
