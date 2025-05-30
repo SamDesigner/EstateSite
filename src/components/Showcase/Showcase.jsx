@@ -1,20 +1,57 @@
 import "./Showcase.css";
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import ShowcaseText from "./ShowcaseText";
+import { useRef } from "react";
+import { FaArrowRight } from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa";
 const Showcase = () => {
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
   return (
-    <div 
+    <>
+      <button
+        ref={prevRef}
+        className="absolute left-4 top-[40%] md:top-1/2 -translate-y-1/2 z-10 bg-gray-200 p-[10px] md:p-[20px]   rounded-full"
+      >
+        <FaArrowLeft />
+      </button>
+      <button
+        ref={nextRef}
+        className="absolute right-4 top-[40%] md:top-1/2 -translate-y-1/2 z-10 bg-gray-200 p-[10px] md:p-[20px]  rounded-full"
+      >
+        <FaArrowRight />
+      </button>
+      <Swiper
+        modules={[Navigation, Pagination, Autoplay]} // Add needed modules here
+        spaceBetween={30}
+        slidesPerView={1}
+        onBeforeInit={(swiper) => {
+          swiper.params.navigation.prevEl = prevRef.current;
+          swiper.params.navigation.nextEl = nextRef.current;
+        }}
+        navigation={{
+          prevEl: prevRef.current,
+          nextEl: nextRef.current,
+        }}
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 3000 }}
+        loop={true}
+      >
+        {['one', 'two', 'three', 'four'].map((item, index) => (
+          <SwiperSlide  key={index} >
+            <div className={`showcase_bg_${item} showcase_bg   h-[80vh] lg:h-[100vh] pt-[200px] flex items-center justify-center pb-[60px]`}>
+              <ShowcaseText />
+            </div>
+          </SwiperSlide>
+        ))}
 
-    className="showcase_bg  h-[80vh] lg:h-[100vh]  flex items-end justify-center pb-[60px]">
-      <div 
-          data-aos="fade-up"
-          data-aos-duration="3000"  className="flex  flex-col items-center md:gap-[10px] md:gap-[20px]">
-        <h3 className="text-white font-[100]">Explore Real Estate with us</h3>
-        <h1 className="text-white uppercase text-[40px] md:text-[70px] font-[500] md:w-[600px] leading-[80px] text-center"><span className="text-customRed">Smart</span> Moves, Asset <span className="text-customRed">Allocated</span> </h1>
-        <p className="font-[100] text-white md:w-[450px] text-center text-[18px]">
-        A reliable Nigerian luxury real estate marketing and sales consultancy.
-        </p>
-      </div>
-    </div>
+       
+      </Swiper>
+    </>
   );
 };
 

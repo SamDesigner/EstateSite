@@ -21,7 +21,7 @@ const AboutCoreValues = () => {
       <div className="flex flex-col gap-[20px] items-center w-full md:flex-row md:justify-between">
         <div 
          data-aos="flip-up"
-        className="w-[250px]  lg:w-[300px] shadow-md flex gap-[20px] items-center justify-center flex-col h-[150px] rounded-[10px] ">
+        className="w-full md:w-[250px]  lg:w-[300px] shadow-md flex gap-[20px] items-center justify-center flex-col h-[150px] rounded-[10px] ">
           <div className="border border-1 rounded-full border-primary w-fit p-3">
             <GoTelescope className="text-primary text-[20px] font-[100]" />
           </div>
@@ -30,7 +30,7 @@ const AboutCoreValues = () => {
         <div 
          data-aos="flip-up"
          data-aos-delay="300"
-        className="w-[250px]  lg:w-[300px] shadow-md flex gap-[20px] items-center justify-center flex-col h-[150px] rounded-[10px] ">
+        className="w-full md:w-[250px]  lg:w-[300px] shadow-md flex gap-[20px] items-center justify-center flex-col h-[150px] rounded-[10px] ">
           <div className="border border-1 rounded-full border-primary w-fit p-3">
             <GoTelescope className="text-primary text-[20px] font-[100]" />
           </div>
@@ -39,7 +39,7 @@ const AboutCoreValues = () => {
         <div 
          data-aos="flip-up"
          data-aos-delay="500"
-        className="w-[250px]  lg:w-[300px] shadow-md flex gap-[20px] items-center justify-center flex-col h-[150px] rounded-[10px] ">
+        className="w-full md:w-[250px]  lg:w-[300px] shadow-md flex gap-[20px] items-center justify-center flex-col h-[150px] rounded-[10px] ">
           <div className="border border-1 rounded-full border-primary w-fit p-3">
             <GoTelescope className="text-primary text-[20px] font-[100]" />
           </div>

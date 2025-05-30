@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 // import { FaPhoneVolume } from "react-icons/fa6";
 // import { FaWhatsapp } from "react-icons/fa";
 // import { FiMail } from "react-icons/fi";
@@ -6,8 +6,8 @@ import  { useState } from "react";
 import { FaBarsStaggered } from "react-icons/fa6";
 // import { FaFacebook } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
-import NavIcon from  '../assets/images/Icons/AAL_MAIN.png'
-import '../App.css'
+import NavIcon from "../assets/images/Icons/AAL_MAIN.png";
+import "../App.css";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
@@ -25,14 +25,13 @@ const Navbar = () => {
           <NavLink to="/about">About us</NavLink>
           <NavLink to="/location">Locations</NavLink>
           <NavLink to="/services">Services</NavLink>
-          <NavLink to='/admin/properties'>All Properties</NavLink>
-          <NavLink to='/admin/login'>Admin Auth</NavLink>
-       
+          {/* <NavLink to="/admin/properties">All Properties</NavLink> */}
+          {/* <NavLink to="/admin/login">Admin Auth</NavLink> */}
         </div>
         <div className="flex items-center gap-[20px] text-[16px]">
           <div className="hidden md:flex">
-            <NavLink className="font-[200]" to="/contact">
-              Contact us
+            <NavLink to="/contact">
+              <button className="bg-companyGreen text-white py-[10px] px-[20px] rounded-full hover:bg-green-600">Contact us</button>
             </NavLink>
           </div>
 
@@ -57,7 +56,7 @@ const Navbar = () => {
           <NavLink to="/about">About us</NavLink>
           <NavLink to="/location">Locations</NavLink>
           <NavLink to="/services">Services</NavLink>
-          <NavLink to="/properties">Properties</NavLink>
+          {/* <NavLink to="/admin/properties">All Properties</NavLink> */}
           <NavLink to="/contact">Contact us</NavLink>
         </div>
       )}

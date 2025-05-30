@@ -7,7 +7,7 @@ const AboutVision = () => {
     <div className="bg-gray-100">
       <div className="max-w-[1440px] mx-auto px-[20px] py-[100px] flex flex-col gap-[30px]">
         <div
-        data-aos="fade-up"
+        // data-aos="fade-up"
         className="flex items-center justify-center">
           <div className="">
             <div className="flex flex-col items-center justify-center gap-[20px] pb-[20px]">
@@ -24,7 +24,7 @@ const AboutVision = () => {
         <div
         data-aos="fade-up"
         >
-          <h2 className="text-[35px] md:text-[50px] leading-[60px] md:leading-[80px] text-gray-600 font-[200] text-center">
+          <h2 className="text-[25px] lg:text-[35px] md:text-[50px] leading-[60px] md:leading-[80px] text-gray-600 font-[200] text-center">
             <span className="text-primary md:pl-[50px]">
             To become at all times our{" "}
             </span>{" "}

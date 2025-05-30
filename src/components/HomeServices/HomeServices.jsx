@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 const HomeServices = () => {
   return (
     <div className='md:px-[20px] pt-[20px] pb-[50px] md:py-[100px]'>
-        <div className='max-w-[1440px] mx-auto bg-primary md:rounded-3xl  p-[20px] lg:p-[40px] min-h-[85vh]'>
+        <div className='max-w-[1440px] mx-auto bg-primary md:rounded-3xl  p-[20px] lg:p-[40px] lg:min-h-[85vh]'>
             <div className='flex  flex-col md:flex-row h-[100%] gap-[30px]'>
                 {/* Left Image Comes Here */}
                 <div

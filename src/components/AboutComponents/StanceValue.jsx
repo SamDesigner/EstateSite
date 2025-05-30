@@ -1,12 +1,12 @@
 import { MdRocketLaunch } from "react-icons/md";
 const StanceValue = () => {
   return (
-    <div className=" py-[40px]">
+    <div className=" py-[40px] bg-primary ">
       <div className="max-w-[1440px] mx-auto">
         {/* Stance Section Starts Here */}
-        <div className="bg-primary ">
+        <div className="">
         
-          <div className="flex flex-col md:flex-row min-h-[80vh]">
+          <div className="flex flex-col md:flex-row lg:min-h-[80vh]">
        
             <div className="flex-1 px-[16px] lg:px-[25px] py-[40px] flex flex-col gap-[20px] lg:gap-[10px]">
               <h6 className="uppercase text-white text-[12px]">Our Mission</h6>

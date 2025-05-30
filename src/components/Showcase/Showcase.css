@@ -1,5 +1,25 @@
+.swiper-pagination-bullet-active {
+  background: white !important;
+}
+.showcase_bg_one{
+        background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.6)) , url(../../assets/images/newBg.jpg);
+
+
+}
+.showcase_bg_two{
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)) , url(../../assets/images/lagosSeaView.jpg);
+
+}
+.showcase_bg_three{
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)) , url(../../assets/images/bgThree.jpg);
+
+}
+.showcase_bg_four{
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)) , url(../../assets/images/bg4.jpg);
+
+}
 .showcase_bg{
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.6)) , url(../../assets/images/newBg.jpg);
+    /* background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.6)) , url(../../assets/images/newBg.jpg); */
     background-position: center;
     background-size: cover;
 }

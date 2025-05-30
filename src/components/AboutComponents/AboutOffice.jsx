@@ -4,7 +4,7 @@ const AboutOffice = () => {
   return (
     <div className="max-w-[1440px] mx-auto pt-[100px]">
       <div className="aboutContact_bg flex items-center justify-center flex-col gap-[20px] text-white">
-        <h1 className="text-[40px] font-[500]">
+        <h1 className="text-[40px] text-center font-[500]">
           Secure Your Future: Invest in an Asset Today
         </h1>
         <p>
