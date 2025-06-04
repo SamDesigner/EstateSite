@@ -3,33 +3,41 @@ import { FaInstagram } from "react-icons/fa";
 import { useRef } from "react";
 import { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { IoMailOutline } from "react-icons/io5";
+// import { FaXTwitter } from "react-icons/fa6";
 import emailjs from "@emailjs/browser";
 import { showSuccessToast, showErrorToast } from "../../utils/toast";
-import Loader from '../Loader/Loader'
+import Loader from "../Loader/Loader";
 const ContactHero = () => {
   const form = useRef();
   const [isLoading, setIsLoading] = useState(false);
+  const phoneNumber = +2348033064524;
+  const message = encodeURIComponent(
+    `Hello I am texting you from the Asset Allocators website`
+  );
+  const email = "info@assetallocators.com";
+  const mailtoLink = `mailto:${email}`;
+  const whatsappLink = `https://wa.me/${phoneNumber}?text=${message}`;
   const sendEmail = (e) => {
     e.preventDefault();
-    setIsLoading(true)
+    setIsLoading(true);
     emailjs
       .sendForm(
-        "service_nfcrqip", 
-        "template_u3pbyir", 
+        "service_nfcrqip",
+        "template_u3pbyir",
         form.current,
         "MltiYLOsvBs_FIcXY"
       )
       .then(
         (result) => {
           console.log("Email sent successfully!", result.text);
-          showSuccessToast('Message Sent Successfully');
+          showSuccessToast("Message Sent Successfully");
           setIsLoading(false);
           form.current.reset();
         },
         (error) => {
           console.error("Email send error:", error.text);
-          showErrorToast('An Error Occured, Try Again!!!!');
+          showErrorToast("An Error Occured, Try Again!!!!");
           setIsLoading(false);
         }
       );
@@ -58,11 +66,12 @@ const ContactHero = () => {
             <a href="https://www.instagram.com/assetallocatorsltd/">
               <FaInstagram />
             </a>
-            <a href="#">
+            <a href={whatsappLink} target="_blank">
               <FaWhatsapp />
             </a>
-            <a href="#">
-              <FaXTwitter />
+            <a href={mailtoLink} target="_blank">
+              {/* <FaXTwitter /> */}
+              <IoMailOutline />
             </a>
           </div>
           <div className="mt-[20px] flex flex-col gap-[10px]">
@@ -117,7 +126,11 @@ const ContactHero = () => {
               Kindly fill all details below
             </p>
           </div>
-          <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-[20px]">
+          <form
+            ref={form}
+            onSubmit={sendEmail}
+            className="flex flex-col gap-[20px]"
+          >
             <div className="flex flex-col md:flex-row gap-[20px] ">
               <div className="flex flex-col gap-[10px] flex-1">
                 <label className="text-[14px] text-gray-400">Full Name</label>
@@ -125,7 +138,7 @@ const ContactHero = () => {
                   className="border rounded-md p-3"
                   type="text"
                   placeholder="John"
-                  name='fullName'
+                  name="fullName"
                   required
                 />
               </div>
@@ -167,7 +180,6 @@ const ContactHero = () => {
                   type="email"
                   placeholder="yourmail@mail.com"
                   required
-
                 />
               </div>
             </div>
@@ -182,10 +194,9 @@ const ContactHero = () => {
               </div>
             </div>
             <button className="bg-primary py-[10px] text-white rounded-full flex justify-center items-center gap-[10px]">
-             {isLoading && <Loader /> }
-              {!isLoading && <span>Send</span> }
+              {isLoading && <Loader />}
+              {!isLoading && <span>Send</span>}
             </button>
-            
           </form>
         </div>
       </div>

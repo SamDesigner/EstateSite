@@ -4,6 +4,12 @@ import { FaWhatsapp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./Footer.css";
 const Footer = () => {
+  const phoneNumber = +2348033064524;
+  const message = encodeURIComponent(
+    `Hello I am texting you from the Asset Allocators website`
+  );
+  const whatsappLink = `https://wa.me/${phoneNumber}?text=${message}`;
+
   return (
     <footer className="px-[20px] lg:px-[80px] bg-primary py-[100px]">
       <div className="max-w-[1440px] mx-auto ">
@@ -63,7 +69,9 @@ const Footer = () => {
               <SiInstagram />
             </a>
             {/*  */}
-            <FaWhatsapp />
+            <a href={whatsappLink} target='_blank'>
+              <FaWhatsapp />
+            </a>
             {/* <GrLinkedin /> */}
           </div>
         </div>

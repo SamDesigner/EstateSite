@@ -29,11 +29,13 @@ const AboutVision = () => {
             To become at all times our{" "}
             </span>{" "}
             <span className="text-primary">clients’ </span>
-            foremost <span className="text-primary">real,estate </span> service
-            provider while partnering with them on their own
+            foremost <span className="text-primary">real estate </span> service
+            provider while partnering with them on their own vision.
             <span className="text-primary"> vision. </span>
             (Helping them create their dream Real Estate World)
           </h2>
+    
+
         </div>
       </div>
     </div>

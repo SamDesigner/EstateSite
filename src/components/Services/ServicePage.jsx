@@ -1,20 +1,20 @@
 import ServiceComponent from "./ServiceComponent";
-import './Services.css'
+import "./Services.css";
 const ServicePage = () => {
   return (
     <div className="max-w-[1440px] mx-auto h-auto">
-
       <div className=" w-full flex flex-col-reverse service_bg px-[20px] lg:px-[40px] gap-[30px] pt-[300px] pb-[40px]">
-  
         <div className="flex-1 text-white">
           <h1 className="text-white text-[40px] font-[500]">Our Services</h1>
           <p className="md:w-[700px] text-justify">
-            We are commited to excellence in the services we provided and in the
-            results we attain for clients. We achieve the highest quality of
-            delivery bt attractingm developing and the best professionalsand
-            investingn in latest.
+            We proudly represent both buyers and sellers, dedicating ourselves
+            to conducting comprehensive research on key details of every
+            transaction. Our goal is to ensure that both parties are well,
+            informed and received best possible outcomes. By understanding the
+            needs of each side. We facilitate smooth, transparent and mutually
+            beneficial transactions. That Foster long-term
+            relationship and trust.
           </p>
-
         </div>
       </div>
 
@@ -35,13 +35,7 @@ const ServicePage = () => {
           serviceNo="02"
           serviceSubHead="Support"
           serviceHead="Sales"
-          serviceText="We would normally undertake to sell the property for the best
-              price within a suitable time frame and to act as the seller’s
-              representative in managing all aspects of the sale. This commences
-              with the initial appraisal of the property including advice on
-              possible sale price, marketing and promotion of your property,
-              generates interest in prospective buyers and handle negotiations
-              which can at times be sensitive."
+          serviceText="We would normally undertake to sell the property for the best price within a suitable time frame and to act as the seller’s representative in managing all aspects of the sale. This commences with the initial appraisal of the property including advice on possible sale price, marketing and promotion of your property, generates interest in prospective buyers and handle negotiations which can at times be sensitive.As the intermediary, we can relieve some of the stress that you may otherwise feel by providing quality services from our vast experience of the local and international trends and conditions."
         />
         <ServiceComponent
           serviceNo="03"
