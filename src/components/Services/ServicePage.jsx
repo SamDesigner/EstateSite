@@ -23,13 +23,8 @@ const ServicePage = () => {
           serviceNo="01"
           serviceSubHead="Support"
           serviceHead="Estate Agency"
-          serviceText="We proudly represent both buyers and sellers, dedicating ourselves
-              to conducting comprehensive research on key details of every
-              transaction. Our goal is to ensure that both parties are fully
-              informed and receive the best possible outcome. By understanding
-              the unique needs of each side, we facilitate smooth, transparent,
-              and mutually beneficial transactions that foster long-term
-              relationships and trust."
+          serviceText="Whether representing the buyer or the seller, certain information must be researched in order to assure a transaction that will work for both parties.
+"
         />
         <ServiceComponent
           serviceNo="02"

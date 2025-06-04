@@ -13,10 +13,10 @@ const Footer = () => {
   return (
     <footer className="px-[20px] lg:px-[80px] bg-primary py-[100px]">
       <div className="max-w-[1440px] mx-auto ">
-        <div className="flex flex-col gap-[30px]  lg:flex-row md:justify-between">
+        <div className="flex flex-col gap-[30px]  lg:flex-row md:justify-between items-center">
           <div className="flex flex-col gap-[20px] lg:w-[400px]">
             <h1 className="text-white text-[30px] font-[500]">
-              ASSET ALLOCATORS
+              ASSET ALLOCATORS  
             </h1>
             <p className="text-white text-justify">
               We are a trusted real estate firm driven by a team of skilled
@@ -29,23 +29,23 @@ const Footer = () => {
           </div>
           <div className="flex flex-row gap-[40px] ">
             <div className="flex flex-col gap-[20px]">
-              <h1 className="text-white text-[30px] font-[400]">Quick Link</h1>
+              {/* <h1 className="text-white text-[30px] font-[400]">Quick Link</h1> */}
               <ul className="text-white font-[100] flex flex-col gap-[10px]">
                 <li>
                   <Link to="/about">About Us</Link>
                 </li>
                 <li>
-                  <Link to="#">Properties</Link>
+                  <Link to="/location">Properties</Link>
                 </li>
                 <li>
-                  <Link to="#">Services</Link>
+                  <Link to="/services">Services</Link>
                 </li>
               </ul>
             </div>
             <div className="flex flex-col gap-[20px]">
-              <h1 className="text-white text-[30px] font-[400]">
+              {/* <h1 className="text-white text-[30px] font-[400]">
                 Keep In Touch
-              </h1>
+              </h1> */}
               <ul className="text-white font-[100] flex flex-col gap-[10px]">
                 <li>
                   <Link to="#">Contact Us</Link>

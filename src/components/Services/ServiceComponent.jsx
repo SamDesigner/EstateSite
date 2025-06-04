@@ -1,6 +1,5 @@
-import PropTypes from 'prop-types';
-
-
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 const ServiceSubPage = ({
   serviceNo,
   serviceSubHead,
@@ -26,9 +25,11 @@ const ServiceSubPage = ({
               <p className="text-[16px] font-[200] text-black">{serviceText}</p>
             </div>
           </div>
-          <button className="border border-primary w-fit py-3 px-6 hover:bg-primary hover:text-white mt-[20px]">
-            Book a Consultant
-          </button>
+          <Link to="/appointment">
+            <button className="border border-primary w-fit py-3 px-6 hover:bg-primary hover:text-white mt-[20px]">
+              Book a Consultant
+            </button>
+          </Link>
         </div>
       </div>
     </div>

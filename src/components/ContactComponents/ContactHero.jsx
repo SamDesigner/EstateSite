@@ -4,6 +4,8 @@ import { useRef } from "react";
 import { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { IoMailOutline } from "react-icons/io5";
+import { FaPhoneAlt } from "react-icons/fa";
+import { IoLocationOutline } from "react-icons/io5";
 // import { FaXTwitter } from "react-icons/fa6";
 import emailjs from "@emailjs/browser";
 import { showSuccessToast, showErrorToast } from "../../utils/toast";
@@ -54,8 +56,8 @@ const ContactHero = () => {
       <div className="max-w-[1440px] mx-auto px-[16px] lg:px-[80px] py-[30px]  flex flex-col lg:flex-row gap-[30px] lg:gap-[35px] ">
         <div className="flex-1 flex flex-col gap-[20px] border-r border-gray-200  md:py-[100px] lg:px-[20px] ">
           <div className="flex flex-col gap-[10px]">
-            <h6 className="text-primary uppercase text-[12px]">Social Links</h6>
-            <h1 className="text-[30px] font-[300] ">We're just a call away</h1>
+            {/* <h6 className="text-primary uppercase text-[12px]">Social Links</h6>
+            <h1 className="text-[30px] font-[300] ">We're just a call away</h1> */}
             <p className="text-[14px] text-gray-400 font-[200]">
               Feel free to contact us on social media or fill the form and state
               our request, our customer services are effiicient and we are ready
@@ -75,26 +77,29 @@ const ContactHero = () => {
             </a>
           </div>
           <div className="mt-[20px] flex flex-col gap-[10px]">
-            <h6 className="text-primary text-[10px] uppercase">Locate Us</h6>
-            <h3 className="text-[24px] font-[300]">Our Office Location</h3>
-            <p className="text-gray-400 font-[200] text-[14px]">
-              Asset Allocators ltd 27A Providence Street, lekki phase1, Lekki,
-              Lagos
-            </p>
+            {/* <h6 className="text-primary text-[10px] uppercase">Locate Us</h6>
+            <h3 className="text-[24px] font-[300]">Our Office Location</h3> */}
+            <div className="text-gray-400 font-[200] text-[14px] flex items-center gap-[20px]">
+              <IoLocationOutline />
+              <div>
+                Asset Allocators ltd 27A Providence Street, lekki phase1, Lekki,
+                Lagos
+              </div>
+            </div>
           </div>
           <div className="mt-[20px] flex flex-col gap-[10px]">
-            <h6 className="text-primary text-[10px] uppercase">
+            {/* <h6 className="text-primary text-[10px] uppercase">
               Phone Numbers
             </h6>
-            <h3 className="text-[24px] font-[300]">Place a Call</h3>
-            <p className="text-gray-400 font-[200] text-[14px]">
-              +2348033064524, +2348087185200 , +2340812 366 1053 <br /> + 234
-              7084282870
-            </p>
+            <h3 className="text-[24px] font-[300]">Place a Call</h3> */}
+            <div className="text-gray-400 font-[200] text-[14px] flex items-center gap-[20px]">
+              <FaPhoneAlt />
+              <div>+2348033064524, +2348087185200</div>
+            </div>
           </div>
           <div className="mt-[20px] flex flex-col gap-[10px]">
-            <h6 className="text-primary text-[10px] uppercase">Active Days</h6>
-            <h3 className="text-[24px] font-[300]">Opening Hours</h3>
+            {/* <h6 className="text-primary text-[10px] uppercase">Active Days</h6>
+            <h3 className="text-[24px] font-[300]">Opening Hours</h3> */}
             <div className="flex flex-col gap-[10px]">
               <div className="text-gray-400 font-[200] text-[14px] flex ">
                 <div className="w-[50px]">Mon</div>
@@ -121,8 +126,8 @@ const ContactHero = () => {
         </div>
         <div className="flex-1 flex flex-col gap-[25px] lg:py-[100px]">
           <div className="flex flex-col gap-[10px]">
-            <h1 className="text-[30px] font-[300] ">Get In Touch</h1>
-            <p className="text-[12px] text-gray-400">
+            {/* <h1 className="text-[30px] font-[300] ">Get In Touch</h1> */}
+            <p className="text-[14px] text-gray-500">
               Kindly fill all details below
             </p>
           </div>
