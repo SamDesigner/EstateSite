@@ -12,10 +12,10 @@ const ShowcaseText = () => {
           <br></br>
           <span className="text-customRed">Allocated</span>{" "}
         </h1>
-        <p className="font-[100] text-white md:w-[450px] text-center text-[18px]">
+        {/* <p className="font-[100] text-white md:w-[450px] text-center text-[18px]">
           A reliable Nigerian real estate marketing and sales
           consultancy.
-        </p>
+        </p> */}
       </div>
     </div>
   );

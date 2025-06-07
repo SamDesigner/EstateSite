@@ -6,16 +6,17 @@ const StanceValue = () => {
         {/* Stance Section Starts Here */}
         <div className="">
           <div className="flex flex-col md:flex-row py-[40px]">
-            <div className="flex-1 px-[16px] lg:px-[25px] py-[40px] flex flex-col gap-[20px] lg:gap-[10px]">
-              <h6 className="uppercase text-white text-[12px]">Our Mission</h6>
-              <h1 className="text-[30px] text-white lg:text-[50px] font-[400] flex gap-[10px] items-center">
-                What we Stand For{" "}
+            <div className="flex-1 px-[16px] lg:px-[25px] py-[40px] flex flex-col gap-[20px] lg:gap-[10px] items-center justify-center">
+              {/* <h6 className="uppercase text-white text-[12px]">Our Mission</h6> */}
+              <h1 className="text-[30px] text-white lg:text-[30px] font-[400] flex gap-[10px] items-center">
+                {/* What we Stand For{" "} */}
+                Our Mission
                 <span>
                   <MdRocketLaunch />
                 </span>
               </h1>
               <div className="flex flex-col gap-[15px] lg:gap-[30px]">
-                <h3 className="text-[20px] text-white lg:text-[30px] font-[400]">
+                <h3 className="text-[18px] text-white text-center lg:text-[20px] md:w-[600px]">
                   To always go the extra mile, at every opportunity, to provide
                   quality service for our clients.
                 </h3>

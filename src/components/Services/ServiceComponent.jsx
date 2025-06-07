@@ -1,8 +1,7 @@
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 const ServiceSubPage = ({
   serviceNo,
-  serviceSubHead,
   serviceHead,
   serviceText,
 }) => {
@@ -16,20 +15,18 @@ const ServiceSubPage = ({
                 {serviceNo}
               </div>
 
-              <h3 className="text-primary uppercase font-[200] text-[14px]">
-                {serviceSubHead}
-              </h3>
+          
             </div>
-            <div className="flex flex-col gap-[25px]">
+            <div className="flex flex-col gap-[25px] my-[5px]">
               <h3 className="font-[300] text-[25px]">{serviceHead}</h3>
               <p className="text-[16px] font-[200] text-black">{serviceText}</p>
             </div>
           </div>
-          <Link to="/appointment">
+          {/* <Link to="/appointment">
             <button className="border border-primary w-fit py-3 px-6 hover:bg-primary hover:text-white mt-[20px]">
               Book a Consultant
             </button>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>

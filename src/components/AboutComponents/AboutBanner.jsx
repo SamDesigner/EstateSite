@@ -1,6 +1,6 @@
 import "./About.css";
 import { Link } from "react-router-dom";
-const AboutOffice = () => {
+const AboutBanner = () => {
   return (
     <div className="max-w-[1440px] mx-auto pt-[100px]">
       <div className="aboutContact_bg flex items-center justify-center flex-col gap-[20px] text-white">
@@ -19,4 +19,4 @@ const AboutOffice = () => {
   );
 };
 
-export default AboutOffice;
+export default AboutBanner;

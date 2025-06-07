@@ -12,9 +12,10 @@ const AboutVision = () => {
           <div className="">
             <div className="flex flex-col items-center justify-center gap-[20px] pb-[20px]">
               <GoTelescope className="text-primary text-[40px] font-[100]" />
-              <p className="text-primary font-[300] text-[14px]">OUR VISION</p>
+              {/* <p className="text-primary font-[300] text-[14px]">OUR VISION</p> */}
               <h2 className="text-[30px] md:w-[500px] text-center">
-              Working with you to realize your property goals
+              {/* Working with you to realize your property goals */}
+              OUR VISION
               </h2>
               <div className="border-b border-primary  w-[200px]"></div>
             </div>

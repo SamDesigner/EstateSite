@@ -9,7 +9,7 @@ import StanceValue from '../components/AboutComponents/StanceValue'
 
 import Footer from '../components/Footer/Footer'
 // import AboutLeaders from '../components/AboutComponents/AboutLeaders'
-import AboutOffice from '../components/AboutComponents/AboutOffice'
+import AboutOffice from '../components/AboutComponents/AboutBanner'
 
 // import AboutFaq from '../components/AboutComponents/AboutFaq'
 import AboutCoreValues from '../components/AboutComponents/AboutCoreValues'

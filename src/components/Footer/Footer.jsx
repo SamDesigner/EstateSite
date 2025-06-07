@@ -15,8 +15,8 @@ const Footer = () => {
       <div className="max-w-[1440px] mx-auto ">
         <div className="flex flex-col gap-[30px]  lg:flex-row md:justify-between items-center">
           <div className="flex flex-col gap-[20px] lg:w-[400px]">
-            <h1 className="text-white text-[30px] font-[500]">
-              ASSET ALLOCATORS  
+            <h1 className="text-white text-[30px] font-[500] ">
+              Asset Allocators  
             </h1>
             <p className="text-white text-justify">
               We are a trusted real estate firm driven by a team of skilled
@@ -30,7 +30,7 @@ const Footer = () => {
           <div className="flex flex-row gap-[40px] ">
             <div className="flex flex-col gap-[20px]">
               {/* <h1 className="text-white text-[30px] font-[400]">Quick Link</h1> */}
-              <ul className="text-white font-[100] flex flex-col gap-[10px]">
+              <ul className="text-white  flex flex-col gap-[10px]">
                 <li>
                   <Link to="/about">About Us</Link>
                 </li>
@@ -46,7 +46,7 @@ const Footer = () => {
               {/* <h1 className="text-white text-[30px] font-[400]">
                 Keep In Touch
               </h1> */}
-              <ul className="text-white font-[100] flex flex-col gap-[10px]">
+              <ul className="text-white flex flex-col gap-[10px]">
                 <li>
                   <Link to="#">Contact Us</Link>
                 </li>
@@ -59,7 +59,7 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col-reverse gap-[20px] md:gap-0  md:flex-row justify-between items-center mt-[40px]">
-          <p className="text-white text-[14px] font-[100]">
+          <p className="text-white text-[14px] ">
             Copyright Asset Allocators &copy; All Rights Reserved{" "}
             {new Date().getFullYear()}
           </p>
