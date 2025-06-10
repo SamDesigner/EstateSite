@@ -11,7 +11,7 @@ const AboutBanner = () => {
           Ready to take the next step? Get in touch with us today and let's make
           it happen!
         </p>
-        <button className="border border-white py-[8px] px-[20px] rounded-[5px] hover:bg-white hover:text-black">
+        <button className="border border-white py-[8px] px-[20px] rounded-full hover:bg-white hover:text-black">
           <Link to="/contact">Get in touch</Link>
         </button>
       </div>

@@ -20,7 +20,7 @@ const Navbar = () => {
             <img className="h-full" src={NavIcon} />
           </NavLink>
         </div>
-        <div className="hidden md:flex justify-center items-center text-[14px] font-[400] text-gray-800 gap-[40px]">
+        <div className="hidden md:flex justify-center items-center text-[14px] font-[500] text-gray-800 gap-[40px]">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/about">About us</NavLink>
           <NavLink to="/location">Locations</NavLink>

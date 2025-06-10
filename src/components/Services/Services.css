@@ -1,5 +1,5 @@
 .service_bg{
-    background: linear-gradient(rgba(28, 98, 56, 0.8) , rgba(14, 41, 25, 0.8)), url('../../assets/images/smallLagos.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.8) , rgba(0, 0, 0, 0.8)), url('../../assets/images/smallLagos.jpg');
     height: 60vh;
     background-position: center;
 }

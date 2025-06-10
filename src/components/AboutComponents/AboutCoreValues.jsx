@@ -11,12 +11,12 @@ const AboutCoreValues = () => {
       className="flex items-center justify-center">
         <div className="">
           <div className="flex flex-col items-center justify-center gap-[20px] pb-[20px]">
-            <GoTelescope className="text-primary text-[40px] font-[100]" />
-            <p className="text-primary font-[300] text-[14px]">CORE VALUES</p>
+            <GoTelescope className="text-secondary text-[40px] font-[100]" />
+            <p className="text-secondary font-[300] text-[14px]">CORE VALUES</p>
             <h2 className="text-[30px] md:w-[500px] text-center">
               Building your Real Estate Dreams One Step at a time
             </h2>
-            <div className="border-b border-primary  w-[200px]"></div>
+            <div className="border-b border-secondary  w-[200px]"></div>
           </div>
         </div>
       </div>

@@ -23,12 +23,12 @@ const HomeLocation = () => {
       <div className="flex items-center justify-center">
         <div data-aos="fade-up" data-aos-duration="1000" className="">
           <div className="flex flex-col items-center justify-center gap-[20px] pb-[20px]">
-            <TiLocation className="text-primary text-[40px] font-[100]" />
-            <p className="text-primary font-[300] text-[14px]">Properties</p>
+            <TiLocation className="text-secondary text-[40px] font-[100]" />
+            <p className="text-secondary font-[300] text-[14px]">Properties</p>
             <h2 className="text-[30px] md:w-[500px] text-center">
               Transforming spaces to create vibrant, connected communities.
             </h2>
-            <div className="border-b border-primary  w-[200px]"></div>
+            <div className="border-b border-secondary  w-[200px]"></div>
           </div>
         </div>
       </div>

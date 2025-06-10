@@ -1,7 +1,7 @@
 import { MdRocketLaunch } from "react-icons/md";
 const StanceValue = () => {
   return (
-    <div className=" py-[40px] bg-primary ">
+    <div className=" py-[40px] bg-secondary ">
       <div className="max-w-[1440px] mx-auto">
         {/* Stance Section Starts Here */}
         <div className="">

@@ -15,8 +15,8 @@ const LocationShowcase = () => {
     <div>
       <div className="location_bg h-[50vh] md:h-[70vh] flex items-center justify-center">
         <div className="flex items-center justify-center flex-col">
-          <TiLocation className="bounce_item text-[35px] text-primary" />
-          <h1 className="text-primary text-[40px] md:text-[80px] font-[600] uppercase">
+          <TiLocation className="bounce_item text-[35px] text-secondary" />
+          <h1 className="text-secondary text-[40px] md:text-[80px] font-[600] uppercase">
             Loca<span className="text-black">tions</span>
           </h1>
         </div>
