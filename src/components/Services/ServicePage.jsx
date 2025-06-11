@@ -7,13 +7,10 @@ const ServicePage = () => {
         <div className="flex-1 text-white">
           <h1 className="text-white text-[40px] font-[500]">Our Services</h1>
           <p className="md:w-[700px] text-justify">
-            We proudly represent both buyers and sellers, dedicating ourselves
-            to conducting comprehensive research on key details of every
-            transaction. Our goal is to ensure that both parties are well,
-            informed and received best possible outcomes. By understanding the
-            needs of each side. We facilitate smooth, transparent and mutually
-            beneficial transactions. That Foster long-term
-            relationship and trust.
+            We represent both buyers and sellers, conducting thorough research
+            to ensure all parties are well-informed and achieve the best
+            outcome. Our transparent, smooth transactions foster lasting
+            relationships built on trust.
           </p>
         </div>
       </div>
