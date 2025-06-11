@@ -1,14 +1,15 @@
-import integrityIcon from '../../assets/images/integrityIcon.png'
-import ideaIcon from '../../assets/images/ideaIcon.png'
-import excellenceIcon from '../../assets/images/excellenceIcon.png'
+import integrityIcon from "../../assets/images/integrityIcon.png";
+import ideaIcon from "../../assets/images/ideaIcon.png";
+import excellenceIcon from "../../assets/images/excellenceIcon.png";
 import { GoTelescope } from "react-icons/go";
 const AboutCoreValues = () => {
   return (
     <div className="max-w-[1440px] mx-auto px-[20px] py-[100px] flex flex-col gap-[30px]">
       <div
-      data-aos="fade-up"
-      data-aos-duration="1000"
-      className="flex items-center justify-center">
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        className="flex items-center justify-center"
+      >
         <div className="">
           <div className="flex flex-col items-center justify-center gap-[20px] pb-[20px]">
             <GoTelescope className="text-secondary text-[40px] font-[100]" />
@@ -21,34 +22,46 @@ const AboutCoreValues = () => {
         </div>
       </div>
       <div className="flex flex-col gap-[20px] items-center w-full md:flex-row md:justify-between">
-        <div 
-         data-aos="flip-up"
-        className="w-full md:w-[250px]  lg:w-[300px] shadow-md flex gap-[10px] items-center justify-center flex-col h-[150px] rounded-[10px] ">
-          <div >
+        <div
+          data-aos="flip-up"
+          className="w-full md:w-[250px]  lg:w-[300px] shadow-md flex gap-[10px] items-center justify-center flex-col h-[200px] rounded-[10px] "
+        >
+          <div>
             {/* <GoTelescope className="text-primary text-[20px] font-[100]" /> */}
-            <img className='h-[45px]' src={integrityIcon} />
+            <img className="h-[45px]" src={integrityIcon} />
           </div>
           <h3 className="text-[20px] lg:text-[25px] font-[400]">Integrity</h3>
+          <p className="text-[16px] text-align text-gray-400 text-center">
+            Every Deal Stands on the principle of honesty
+          </p>
         </div>
-        <div 
-         data-aos="flip-up"
-         data-aos-delay="300"
-        className="w-full md:w-[250px]  lg:w-[300px] shadow-md flex gap-[10px] items-center justify-center flex-col h-[150px] rounded-[10px] ">
+        <div
+          data-aos="flip-up"
+          data-aos-delay="300"
+          className="w-full md:w-[250px]  lg:w-[300px] shadow-md flex gap-[10px] items-center justify-center flex-col h-[200px] rounded-[10px] "
+        >
           <div>
             {/* <GoTelescope className="text-primary text-[20px] font-[100]" /> */}
-            <img className='h-[45px]' src={ideaIcon} />
+            <img className="h-[45px]" src={ideaIcon} />
           </div>
           <h3 className="text-[20px] lg:text-[25px] font-[400]">Ideas</h3>
+          <p className="text-[16px] text-align text-gray-400">
+            Innovative Solutions. Smarter Living
+          </p>
         </div>
-        <div 
-         data-aos="flip-up"
-         data-aos-delay="500"
-        className="w-full md:w-[250px]  lg:w-[300px] shadow-md flex gap-[10px] items-center justify-center flex-col h-[150px] rounded-[10px] ">
+        <div
+          data-aos="flip-up"
+          data-aos-delay="500"
+          className="w-full md:w-[250px]  lg:w-[300px] shadow-md flex gap-[10px] items-center justify-center flex-col h-[200px] rounded-[10px] "
+        >
           <div>
             {/* <GoTelescope className="text-primary text-[20px] font-[100]" /> */}
-            <img className='h-[45px]' src={excellenceIcon} />
+            <img className="h-[45px]" src={excellenceIcon} />
           </div>
           <h3 className="text-[20px] lg:text-[25px] font-[400]">Excellence</h3>
+          <p className="text-[16px] text-gray-400">
+            Beyond Expectations, Every Time
+          </p>
         </div>
       </div>
     </div>
