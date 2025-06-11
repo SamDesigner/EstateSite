@@ -23,8 +23,8 @@ const Navbar = () => {
         <div className="hidden md:flex justify-center items-center text-[14px] font-[500] text-gray-800 gap-[40px]">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/about">About us</NavLink>
-          <NavLink to="/location">Locations</NavLink>
           <NavLink to="/services">Services</NavLink>
+          <NavLink to="/location">Locations</NavLink>
           {/* <NavLink to="/admin/properties">All Properties</NavLink> */}
           {/* <NavLink to="/admin/login">Admin Auth</NavLink> */}
         </div>
