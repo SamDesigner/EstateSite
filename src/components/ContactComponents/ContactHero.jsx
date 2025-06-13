@@ -92,32 +92,37 @@ const ContactHero = () => {
               Phone Numbers
             </h6>
             <h3 className="text-[24px] font-[300]">Place a Call</h3> */}
-            <div className="text-gray-400 font-[200] text-[14px] flex items-center gap-[20px]">
+            <div className="text-gray-600 font-[500] text-[14px] flex items-center gap-[20px]">
               <FaPhoneAlt />
               <div>+2348033064524, +2348087185200</div>
+            </div>
+            <div className="text-gray-600 font-[500] text-[14px] flex items-center gap-[20px]">
+              <IoMailOutline />
+
+              <div>info@assetallocators.com</div>
             </div>
           </div>
           <div className="mt-[20px] flex flex-col gap-[10px]">
             {/* <h6 className="text-primary text-[10px] uppercase">Active Days</h6>
             <h3 className="text-[24px] font-[300]">Opening Hours</h3> */}
             <div className="flex flex-col gap-[10px]">
-              <div className="text-gray-400 font-[200] text-[14px] flex ">
+              <div className="text-gray-600 font-[400] text-[14px] flex ">
                 <div className="w-[50px]">Mon</div>
                 <div>9am - 5pm</div>
               </div>
-              <div className="text-gray-400 font-[200] text-[14px] flex ">
+              <div className="text-gray-600 font-[400] text-[14px] flex ">
                 <div className="w-[50px]">Tue</div>
                 <div>9am - 5pm</div>
               </div>
-              <div className="text-gray-400 font-[200] text-[14px] flex ">
+              <div className="text-gray-600 font-[400] text-[14px] flex ">
                 <div className="w-[50px]">Wed</div>
                 <div>9am - 5pm</div>
               </div>
-              <div className="text-gray-400 font-[200] text-[14px] flex ">
+              <div className="text-gray-600 font-[400] text-[14px] flex ">
                 <div className="w-[50px]">Thur</div>
                 <div>9am - 5pm</div>
               </div>
-              <div className="text-gray-400 font-[200] text-[14px] flex ">
+              <div className="text-gray-600 font-[400] text-[14px] flex ">
                 <div className="w-[50px]">Fri</div>
                 <div>9am - 5pm</div>
               </div>
