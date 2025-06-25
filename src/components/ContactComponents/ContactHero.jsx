@@ -17,7 +17,7 @@ const ContactHero = () => {
   const message = encodeURIComponent(
     `Hello I am texting you from the Asset Allocators website`
   );
-  const email = "info@assetallocators.com";
+  const email = "info@assetsallocators.com";
   const mailtoLink = `mailto:${email}`;
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${message}`;
   const sendEmail = (e) => {
@@ -99,7 +99,7 @@ const ContactHero = () => {
             <div className="text-gray-600 font-[500] text-[14px] flex items-center gap-[20px]">
               <IoMailOutline />
 
-              <div>info@assetallocators.com</div>
+              <div>info@assetsallocators.com</div>
             </div>
           </div>
           <div className="mt-[20px] flex flex-col gap-[10px]">
