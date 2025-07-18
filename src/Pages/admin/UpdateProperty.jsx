@@ -15,7 +15,7 @@ const UpdateProperty = () => {
         "This was the response while updating the property",
         response
       );
-      navigate("/Dashboard");
+      navigate("/admin/Dashboard");
     } catch (error) {
       console.error("Error while updating property:", error);
     }
