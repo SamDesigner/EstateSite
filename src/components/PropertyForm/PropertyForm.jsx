@@ -65,7 +65,7 @@ const PropertyForm = ({ onSubmit, initialData = {} }) => {
         onChange={handleChange}
         type="number"
         placeholder="Price"
-        required
+        // required
         className="border border-gray-400 p-2 rounded-[5px]"
       />
       <div className="flex flex-col gap-[10px]">

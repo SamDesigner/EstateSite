@@ -65,7 +65,7 @@ const PropertyView = () => {
                 <TbCurrencyNaira />
               </span>
               {/* {property?.price} */}
-              {property?.price?.toLocaleString()}
+              { property?.price ? property?.price?.toLocaleString() : 'POE'}
             </span>
           </p>
           <div>
