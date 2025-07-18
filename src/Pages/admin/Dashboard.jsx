@@ -34,7 +34,16 @@ const Dashboard = () => {
     },
   ];
 
-  const isActive = (path) => location.pathname === path;
+  // const isActive = (path) => location.pathname === path;
+
+  const isActive = (path) => {
+    
+    if (path === "/") {
+      return location.pathname === "/";
+    }
+    return location.pathname.startsWith(path);
+  };
+  
   return (
     <div className="flex h-screen bg-gray-100 ">
       {mobileOpen && (
