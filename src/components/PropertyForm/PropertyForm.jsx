@@ -71,7 +71,7 @@ const PropertyForm = ({ onSubmit, initialData = {} }) => {
       />
       <div className="flex flex-col gap-[10px]">
         <label className="text-[14px]">Property Type</label>
-        <select value={form.listingType} onChange={handleChange} required className="border border-gray-400 p-2 rounded-[5px] bg-white"
+        <select name="listingType" value={form.listingType} onChange={handleChange} required className="border border-gray-400 p-2 rounded-[5px] bg-white"
 >
           <option value="">-- Select --</option>
           <option value='sale'>For Sale</option>
