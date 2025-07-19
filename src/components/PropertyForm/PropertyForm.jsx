@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Loader from "../Loader/Loader"; 
+import Loader from "../Loader/Loader";
 import { showSuccessToast } from "../../utils/toast";
 const PropertyForm = ({ onSubmit, initialData = {} }) => {
   const [form, setForm] = useState({
@@ -7,6 +7,7 @@ const PropertyForm = ({ onSubmit, initialData = {} }) => {
     location: initialData?.location || "",
     description: initialData?.description || "",
     price: initialData?.price || "",
+    listingType: initialData?.listingType || "",
   });
   const [displayImage, setDisplayImage] = useState(null);
   const [images, setImages] = useState([]);
@@ -23,8 +24,8 @@ const PropertyForm = ({ onSubmit, initialData = {} }) => {
     if (displayImage) data.append("displayImage", displayImage);
     images.forEach((img) => data.append("images", img));
     try {
-       await onSubmit(data);
-      showSuccessToast('Property action completed')
+      await onSubmit(data);
+      showSuccessToast("Property action completed");
     } catch (error) {
       console.error("Error while creating a blog", error);
     } finally {
@@ -68,6 +69,15 @@ const PropertyForm = ({ onSubmit, initialData = {} }) => {
         // required
         className="border border-gray-400 p-2 rounded-[5px]"
       />
+      <div className="flex flex-col gap-[10px]">
+        <label className="text-[14px]">Property Type</label>
+        <select value={form.listingType} onChange={handleChange} required className="border border-gray-400 p-2 rounded-[5px] bg-white"
+>
+          <option value="">-- Select --</option>
+          <option value='sale'>For Sale</option>
+          <option value='lease'>For Lease</option>
+        </select>
+      </div>
       <div className="flex flex-col gap-[10px]">
         <label className="text-[14px]">Display Image:</label>
         <input
