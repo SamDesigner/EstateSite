@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { FaLocationDot } from "react-icons/fa6";
 // import Loader from "../Loader/Loader";
 const PropertyCard = ({ property }) => {
-  const BASE_URL = import.meta.env.VITE_API_URL;
+  // const BASE_URL = import.meta.env.VITE_API_URL;
 
   return (
     <>
@@ -15,7 +15,7 @@ const PropertyCard = ({ property }) => {
             className="h-[200px] w-full object-cover rounded-[10px]"
           />
         ) : (
-          <h1>Hi</h1>
+          <h1>No Image</h1>
           // <img
           //   src="path/to/placeholder/image.jpg" // Fallback image if no displayImage
           //   alt="Placeholder" // Alt text for placeholder
@@ -30,6 +30,17 @@ const PropertyCard = ({ property }) => {
             </span>
             {property?.location}
           </p>
+          <div>
+            {property?.listingType === "sale" ? (
+              <span className="bg-green-500 text-white rounded-lg text-sm">
+                For Sale
+              </span>
+            ) : (
+              <sale className="bg-purple-600 text-white rounded-lg text-sm">
+                For Lease
+              </sale>
+            )}
+          </div>
           <h3 className="text-[12px] text-companyGreen font-[500] mt-[10px]">
             Description
           </h3>

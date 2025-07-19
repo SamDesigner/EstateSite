@@ -58,6 +58,11 @@ const PropertyView = () => {
               {property?.location}
             </p>
           </div>
+          <div>
+            {
+              property?.listingType === 'sale' ? <span className="bg-green-500 text-white rounded-lg text-sm">For Sale</span> : <sale className='bg-purple-600 text-white rounded-lg text-sm'>For Lease</sale>
+            }
+          </div>
           <p className="flex gap-[5px]">
             <span>Price:</span>
             <span className="flex items-center">
