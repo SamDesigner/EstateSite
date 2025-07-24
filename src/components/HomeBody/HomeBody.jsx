@@ -10,7 +10,7 @@ const HomeBody = () => {
         data-aos-duration="1000"
         className=" flex flex-col items-center justify-center px-[20px] md:px-[0px]"
       >
-        <div className="text-primary text-[30px] font-[100]">
+        <div className="text-secondary text-[30px] font-[100]">
           <FaRegBuilding />
         </div>
         <p className="text-primary font-[300] text-[14px]">OUR FIRM</p>

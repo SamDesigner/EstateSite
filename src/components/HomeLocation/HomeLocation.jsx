@@ -32,6 +32,7 @@ const HomeLocation = () => {
           </div>
         </div>
       </div>
+      
       {!properties && <div className="flex flex-col gap-[10px] items-center justify-center"><Loader /><p>Please wait while property is loading...</p></div>}
       <div className=" w-full flex flex-col md:gap-[60px] px-[20px] ">
         {/* First Row of Properties */}
