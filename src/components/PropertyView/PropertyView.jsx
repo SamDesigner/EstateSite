@@ -60,7 +60,7 @@ const PropertyView = () => {
           </div>
           <div>
             {
-              property?.listingType === 'sale' ? <span className="bg-green-500 text-white rounded-lg text-sm">For Sale</span> : <sale className='bg-purple-600 text-white rounded-lg text-sm'>For Lease</sale>
+              property?.listingType === 'sale' ? <span className="bg-green-500 text-white rounded-full text-sm p-[5px]">For Sale</span> : <sale className='bg-purple-600 text-white rounded-full text-sm p-[5px]'>For Lease</sale>
             }
           </div>
           <p className="flex gap-[5px]">
@@ -114,8 +114,8 @@ const PropertyView = () => {
               className="fit-cover h-[60vh] w-full object-cover "
               src={property?.displayImage}
             />
-            <div className="flex flex-col gap-[10px] mt-[20px]">
-              <div className="flex gap-[20px]">
+            <div className="flex flex-col gap-[10px] mt-[20px] w-full">
+              <div className="flex gap-[20px] w-full overflow-x-scroll scrollbar-hide">
                 {property?.images?.map((propertyImage, index) => (
                   <img
                     className="h-[100px] w-[100px] object-cover "

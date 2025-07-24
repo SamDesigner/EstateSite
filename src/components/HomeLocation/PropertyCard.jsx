@@ -32,11 +32,11 @@ const PropertyCard = ({ property }) => {
           </p>
           <div>
             {property?.listingType === "sale" ? (
-              <span className="bg-green-500 text-white rounded-lg text-sm">
+              <span className="bg-green-500 text-white rounded-lg text-sm p-[5px]">
                 For Sale
               </span>
             ) : (
-              <sale className="bg-purple-600 text-white rounded-lg text-sm">
+              <sale className="bg-purple-600 text-white rounded-full text-sm p-[5px]">
                 For Lease
               </sale>
             )}
