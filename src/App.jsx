@@ -56,13 +56,13 @@ function App() {
           <Route path="/admin/signup" element={<SignUp />} /> */}
           <Route path="/appointment" element={<Appointment />} />
           <Route path="/admin/Dashboard" element={<ProtectedRoute />}>
-            <Route element={<Dashboard />}>
-              <Route index element={<div />} />
+            {/* <Route element={<Dashboard />}> */}
+              <Route index element={<Dashboard />} />
               <Route path="updateProperty/:id" element={<UpdateProperty />} />
               <Route path="createProperty" element={<CreateProperty />} />
               <Route path="properties" element={<AllProperties />} />
-            </Route>
-          </Route>
+            {/* </Route> */}
+          </Route>  
         </Routes>
       </Router>
     </div>
