@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import {  deleteProperty } from "../../api/propertyApi";
+import { deleteProperty } from "../../api/propertyApi";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { MdModeEditOutline } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
@@ -11,13 +11,12 @@ import usePropertyStore from "../../stores/propertyStore";
 const AllProperties = () => {
   const { fetchProperties, loading, properties } = usePropertyStore();
   const [propertyItem, setPropertyItem] = useState([]);
-  
 
   useEffect(() => {
     // if (properties.length === 0) {
-     
+
     // }
-     fetchProperties();
+    fetchProperties();
   }, []);
   const handleDelete = async (user_id) => {
     try {
@@ -26,9 +25,8 @@ const AllProperties = () => {
       setPropertyItem((prev) =>
         prev.filter((property) => property._id !== user_id)
       );
-      showSuccessToast('Property Deleted Successfully')
-     fetchProperties();
-
+      showSuccessToast("Property Deleted Successfully");
+      fetchProperties();
     } catch (error) {
       console.error(
         "There was an error while trying to delete property",
@@ -77,13 +75,26 @@ const AllProperties = () => {
                 </span>
                 {property.location}
               </p>
+              <div className="mt-[5px]">
+                {property?.listingType === "sale" ? (
+                  <span className="bg-green-700 text-white rounded-full text-sm p-[5px]">
+                    For Sale
+                  </span>
+                ) : (
+                  <sale className="bg-purple-600 text-white rounded-full text-sm p-[5px]">
+                    For Lease
+                  </sale>
+                )}
+              </div>
               <h3 className="text-[12px] text-companyGreen font-[500] mt-[10px]">
                 Description
               </h3>
               <div className="text-[14px] h-[80px]  lg:h-[15vh]">
                 {" "}
                 {property?.description.split(" ").slice(0, 10).join(" ")}
-                <p className="text-companyGreen">{property?.description.split(" ").length > 20 && "..."}</p>
+                <p className="text-companyGreen">
+                  {property?.description.split(" ").length > 20 && "..."}
+                </p>
               </div>
             </div>
 

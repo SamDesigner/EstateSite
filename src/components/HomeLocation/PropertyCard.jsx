@@ -30,9 +30,9 @@ const PropertyCard = ({ property }) => {
             </span>
             {property?.location}
           </p>
-          <div>
+          <div className="mt-[5px]">
             {property?.listingType === "sale" ? (
-              <span className="bg-green-500 text-white rounded-full text-sm p-[5px]">
+              <span className="bg-green-700 text-white rounded-full text-sm p-[5px]">
                 For Sale
               </span>
             ) : (
