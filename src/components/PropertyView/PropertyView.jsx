@@ -50,8 +50,8 @@ const PropertyView = () => {
       <div className="flex flex-col md:flex-row gap-[30px] ">
         <div className="flex-1 flex flex-col gap-[10px]">
           <div>
-            <h1 className="text-[40px] font-[600]">{property?.name}</h1>
-            <p className="flex gap-[5px] items-center">
+            <h1 className="text-[25px] md:text-[40px] font-[600]">{property?.name}</h1>
+            <p className="flex flex-col md:flex-row gap-[5px] md:items-center">
               <span className="flex gap-[5px]">
                 <IoLocation /> Location:
               </span>{" "}
