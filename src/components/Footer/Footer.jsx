@@ -12,9 +12,10 @@ const Footer = () => {
 
   return (
     //Default bg-primary
-    <footer className="px-[20px] lg:px-[80px] bg-secondary py-[100px]">
+    // <footer className="px-[20px] lg:px-[80px] bg-secondary py-[100px]">
+    <footer className="px-[20px] lg:px-[80px] bg-companyGreen py-[100px]">
       <div className="max-w-[1440px] mx-auto ">
-        <div className="flex flex-col gap-[30px]  lg:flex-row md:justify-between items-center">
+        <div className="flex flex-col gap-[30px]  lg:flex-row md:justify-between ">
           <div className="flex flex-col gap-[20px] lg:w-[400px]">
             <h1 className="text-white text-[30px] font-[500] ">
               Asset Allocators  

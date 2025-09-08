@@ -1,11 +1,11 @@
 
 import Navbar from '../components/Navbar'
-import AboutHero from '../components/AboutComponents/AboutHero'
+// import AboutHero from '../components/AboutComponents/AboutHero'
 
 // import AboutUs from '../components/AboutComponents/AboutUs'
 
 import AboutVision from '../components/AboutComponents/AboutVision'
-import StanceValue from '../components/AboutComponents/StanceValue'
+
 
 import Footer from '../components/Footer/Footer'
 // import AboutLeaders from '../components/AboutComponents/AboutLeaders'
@@ -17,9 +17,9 @@ const About = () => {
   return (
     <div>
         <Navbar />
-        <AboutHero />
+        {/* <AboutHero /> */}
         <AboutVision />
-        <StanceValue />
+        
         <AboutCoreValues />
         {/* <AboutLeaders /> */}
         <AboutOffice />

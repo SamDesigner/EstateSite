@@ -8,17 +8,24 @@ import Footer from '../components/Footer/Footer'
 import AboutCoreValues from "../components/AboutComponents/AboutCoreValues";
 import HomeServices from "../components/HomeServices/HomeServices";
 import WhyChoose from "../components/WhyChoose";
+import PropertyInfo from "../components/PropertyInfo/PropertyInfo";
+import AboutOffice from '../components/AboutComponents/AboutBanner'
+
 const Home = () => {
   return (
     <div className="overflow-x-hidden">
       <Navbar />
       <Showcase />
-      <HomeBody />
+      <PropertyInfo />
       <HomeLocation />
-      <AboutCoreValues />
+      <div id="about">
+      <HomeBody />
+      </div>
       <AboutVision />
       <WhyChoose />
+      <AboutCoreValues />
       <HomeServices />
+      <AboutOffice />
       <Footer />
     </div>
   );

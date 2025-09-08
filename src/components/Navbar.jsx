@@ -13,26 +13,26 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="fixed bg-white w-full z-[100] border-b border-gray-200">
-      <nav className="px-[20px] max-w-[1440px] mx-auto  py-[10px] flex bg-white justify-between items-center">
+    <div className="fixed top-0 bg-white w-full z-[100] border-b border-gray-200">
+      <nav className="px-[20px] max-w-[1440px] mx-auto   flex bg-white justify-between items-center">
         <div className="h-[60px] ">
           <NavLink to="/">
             <img className="h-full" src={NavIcon} />
           </NavLink>
         </div>
-        <div className="hidden md:flex justify-center items-center text-[14px] font-[500] text-gray-800 gap-[40px]">
+        <div className="hidden md:flex justify-center items-center text-[15px]  text-gray-800 gap-[40px]">
           <NavLink to="/">Home</NavLink>
-          <NavLink to="/about">About us</NavLink>
+          <a className="cursor-pointer" href="#about">About us</a>
           <NavLink to="/services">Services</NavLink>
-          <NavLink to="/location">Locations</NavLink>
+          <NavLink to="/location">Listings</NavLink>
           {/* <NavLink to="/admin/properties">All Properties</NavLink> */}
           {/* <NavLink to="/admin/login">Admin Auth</NavLink> */}
         </div>
         <div className="flex items-center gap-[20px] text-[16px]">
           <div className="hidden md:flex">
-            <NavLink to="/contact">
+            {/* <NavLink to="/contact">
               <button className="bg-companyGreen text-white py-[10px] px-[20px] rounded-full hover:bg-green-600">Contact us</button>
-            </NavLink>
+            </NavLink> */}
           </div>
 
           <div className="md:hidden">
@@ -53,9 +53,9 @@ const Navbar = () => {
       {isOpen && (
         <div className="top-0 h-[70vh]  w-full flex flex-col justify-center items-center gap-[30px] text-[20px]">
           <NavLink to="/">Home</NavLink>
-          <NavLink to="/about">About us</NavLink>
-          <NavLink to="/services">Services</NavLink>
-          <NavLink to="/location">Locations</NavLink>
+          <a href="#about">About us</a>
+          <NavLink to="/services" onClick={() => setIsOpen(false)}>Services</NavLink>
+          <NavLink to="/location">Listings</NavLink>
           {/* <NavLink to="/admin/properties">All Properties</NavLink> */}
           <NavLink to="/contact">Contact us</NavLink>
         </div>

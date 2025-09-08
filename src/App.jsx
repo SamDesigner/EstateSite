@@ -9,7 +9,7 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
-import About from "./Pages/About";
+// import About from "./Pages/About";
 import Location from "./Pages/Location";
 import AllProperties from "./Pages/admin/AllProperties";
 import CreateProperty from "./Pages/admin/CreateProperty";
@@ -23,6 +23,7 @@ import Appointment from "./Pages/Appointment";
 import SignUp from "./Pages/Auth/SignUp";
 import "aos/dist/aos.css";
 import ProtectedRoute from "./components/ProtectedRoute";
+
 // import ScrollToTop from "./ScrollToTop";
 function App() {
   const ScrollToTop = () => {
@@ -43,7 +44,7 @@ function App() {
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          {/* <Route path="/about" element={<About />} /> */}
           <Route path="/contact" element={<Contact />} />
           <Route path="/services" element={<Services />} />
           <Route path="/location" element={<Location />} />

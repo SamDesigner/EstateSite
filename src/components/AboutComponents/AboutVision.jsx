@@ -1,42 +1,35 @@
-
 import "./About.css";
-import { GoTelescope } from "react-icons/go";
-
+// import { GoTelescope } from "react-icons/go";
+import lagosSeaView from '@/assets/images/lagosSeaView.jpg'
+import SectionHeader from "../SectionHeader";
 const AboutVision = () => {
   return (
-    <div className="bg-gray-100">
-      <div className="max-w-[1440px] mx-auto px-[20px] py-[100px] flex flex-col gap-[30px]">
-        <div
-        // data-aos="fade-up"
-        className="flex items-center justify-center">
-          <div className="">
-            <div className="flex flex-col items-center justify-center gap-[20px] pb-[20px]">
-              <GoTelescope className="text-secondary text-[40px] font-[100]" />
-              {/* <p className="text-primary font-[300] text-[14px]">OUR VISION</p> */}
-              <h2 className="text-[30px] md:w-[500px] text-center">
-              {/* Working with you to realize your property goals */}
-              OUR VISION
-              </h2>
-              <div className="border-b border-secondary  w-[200px]"></div>
-            </div>
-          </div>
+    <div className="h-[100vh]  bg-maroon">
+    
+      <div className=" flex flex-col md:flex-row items-center h-full">
+        <div className="flex-1 h-full bg-black ">
+          <img
+            src={lagosSeaView}
+            className="h-full w-full object-cover"
+          />
         </div>
+        <div  className="flex-1 flex items-center flex-col justify-center text-white py-[30px] ">
+            <SectionHeader 
+        subtitle='What we aim to achieve'
+        title='Our Vision'
+        
+      />
+      <div className="px-[20px]">
 
-        <div
-        data-aos="fade-up"
-        >
-          <h2 className="text-[25px] lg:text-[35px] md:text-[50px] leading-[60px] md:leading-[80px] text-gray-600 font-[200] text-center">
-            <span className="text-secondary md:pl-[50px]">
-            To become at all times our{" "}
-            </span>{" "}
-            <span className="text-secondary">clients’ </span>
-            foremost <span className="text-secondary">real estate </span> service
-            provider while partnering with them on their own 
-            <span className="text-secondary"> vision. </span>
+          <h2 className="text-[20px]  md:leading-[80px]  font-[200] text-center">
+            To become at all times our 
+            clients’ 
+            foremost real estate 
+            service provider while partnering with them on their own
+            vision.
             (Helping them create their dream Real Estate World)
           </h2>
-    
-
+          </div>
         </div>
       </div>
     </div>

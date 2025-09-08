@@ -1,6 +1,23 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"); */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+:root{
+  scroll-behavior: smooth;
 
-
-    
+}
+body {
+  font-family: "Libre Baskerville", serif;
+  /* font-weight: 400; */
+  font-style: normal;
+  /* background-color: rgb(253, 252, 250); */
+}
+.sectionBg{
+  background-color: rgb(245, 247, 246);
+}
+.divider{
+  width: 200px;
+  background-color: rgb(202, 199, 199);
+  height: 1px;
+}

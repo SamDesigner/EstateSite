@@ -7,30 +7,46 @@ const PropertyCard = ({ property }) => {
 
   return (
     <>
-      <div className="bg-white p-4 rounded-[10px] shadow-md ">
+      {/* Was formally White */}
+      <div className="">
         {property?.displayImage?.length > 0 ? (
-          <img
-            src={property?.displayImage} // Ensure the path is correct
-            alt={property?.name} // Add alt text for accessibility
-            className="h-[200px] w-full object-cover rounded-[10px]"
-          />
+          <div className="h-[300px] relative ">
+            <img
+              src={property?.displayImage}
+              alt={property?.name}
+              className="h-full w-full object-cover "
+            />
+            <div className="absolute  w-[80px] top-[0px] left-[0px]">
+              {property?.listingType === "sale" ? (
+                <div className=" w-full  text-gray-[500] bg-primary text-white  text-sm p-[5px]">
+                  For Sale
+                </div>
+              ) : (
+                <div className=" w-full bg-maroon text-gray-[500] text-white text-sm p-[5px]">
+                  For Lease
+                </div>
+              )}
+            </div>
+          </div>
         ) : (
           <h1>No Image</h1>
-          // <img
-          //   src="path/to/placeholder/image.jpg" // Fallback image if no displayImage
-          //   alt="Placeholder" // Alt text for placeholder
-          // />
         )}
         <div className="py-[10px]">
-          <h3 className="text-[20px] font-[500]">{property?.name}</h3>
+          <div className="flex text-[15px] font-[500] items-center justify-between">
+            <h3 className="">{property?.name}</h3>
+
+            {property?.price ? property?.price?.toLocaleString() : "POE"}
+          </div>
 
           <p className="flex gap-[5px] items-center text-[12px] text-gray-500">
             <span>
               <FaLocationDot />
             </span>
-            {property?.location}
+            {property?.location?.length > 30
+              ? property.location.slice(0, 30) + "..."
+              : property?.location}
           </p>
-          <div className="mt-[5px]">
+          {/* <div className="mt-[5px]">
             {property?.listingType === "sale" ? (
               <span className="bg-green-700 text-white rounded-full text-sm p-[5px]">
                 For Sale
@@ -40,19 +56,19 @@ const PropertyCard = ({ property }) => {
                 For Lease
               </sale>
             )}
-          </div>
-          <h3 className="text-[12px] text-companyGreen font-[500] mt-[10px]">
+          </div> */}
+          {/* <h3 className="text-[12px] text-companyGreen font-[500] mt-[10px]">
             Description
           </h3>
-          {/* <p className="text-[14px]">{property.description}</p> */}
+         
           <p className="text-[14px] h-[8vh]">
             {property?.description.split(" ").slice(0, 10).join(" ")}
             {property?.description.split(" ").length > 20 && "..."}
-          </p>
+          </p> */}
         </div>
         <Link to={`/property/${property?._id}`}>
-          <button className="bg-companyGreen text-[14px] cursor-pointer text-white p-2 rounded-[5px]">
-            View more
+          <button className=" text-[12px] cursor-pointer border-b border-black  p-[5px] ">
+            View property
           </button>
         </Link>
       </div>

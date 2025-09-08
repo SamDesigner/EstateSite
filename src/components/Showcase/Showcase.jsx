@@ -1,56 +1,31 @@
 import "./Showcase.css";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import ShowcaseText from "./ShowcaseText";
-import { useRef } from "react";
-import { FaArrowRight } from "react-icons/fa";
-import { FaArrowLeft } from "react-icons/fa";
+// import newShowcase from "../../assets/images/newShowcase.jpg";
+import newShowcaseTwo from "../../assets/images/newShowcaseTwo.jpg";
+import { Link } from "react-router-dom";
+
 const Showcase = () => {
-  const prevRef = useRef(null);
-  const nextRef = useRef(null);
   return (
     <>
-      <button
-        ref={prevRef}
-        className="absolute left-4 top-[40%] md:top-1/2 -translate-y-1/2 z-10 bg-gray-200 p-[10px] md:p-[20px]   rounded-full"
-      >
-        <FaArrowLeft />
-      </button>
-      <button
-        ref={nextRef}
-        className="absolute right-4 top-[40%] md:top-1/2 -translate-y-1/2 z-10 bg-gray-200 p-[10px] md:p-[20px]  rounded-full"
-      >
-        <FaArrowRight />
-      </button>
-      <Swiper
-        modules={[Navigation, Pagination, Autoplay]} // Add needed modules here
-        spaceBetween={30}
-        slidesPerView={1}
-        onBeforeInit={(swiper) => {
-          swiper.params.navigation.prevEl = prevRef.current;
-          swiper.params.navigation.nextEl = nextRef.current;
-        }}
-        navigation={{
-          prevEl: prevRef.current,
-          nextEl: nextRef.current,
-        }}
-        pagination={{ clickable: true }}
-        autoplay={{ delay: 3000 }}
-        loop={true}
-      >
-        {['one', 'two', 'three', 'four'].map((item, index) => (
-          <SwiperSlide  key={index} >
-            <div className={`showcase_bg_${item} showcase_bg   h-[80vh] lg:h-[100vh] pt-[200px] flex items-center justify-center pb-[60px]`}>
-              <ShowcaseText />
-            </div>
-          </SwiperSlide>
-        ))}
-
-       
-      </Swiper>
+      <div className="flex flex-col lg:flex-row h-[90vh] px-[20px] mt-[10vh]">
+        <div className="flex-1 flex items-center justify-center ">
+          <div className="h-[50vh] lg:h-[80vh] w-full">
+            <img className="h-full w-full object-cover" src={newShowcaseTwo} />
+          </div>
+        </div>
+        <div className="flex-1 flex flex-col items-center justify-center gap-[20px]  ">
+          <div className="text-[30px] md:text-[45px] font-light text-center">
+            <h1 className="w-[350px]">Start your search for the perfect</h1>
+            <h3 className="text-primary">home</h3>
+          </div>
+          <p className="md:w-[450px] text-center text-gray-400">Finding high-quality properties in Nigeria is one thing, falling in love with them is another. We help you do both.</p> 
+          <Link>
+            <button className="border border-gray-600 text-gray-600 w-[160px] p-2 hover:bg-primary hover:text-white">Find a Property</button>
+          </Link>
+        </div>
+      </div>
     </>
   );
 };
