@@ -30,18 +30,20 @@ const LocationShowcase = () => {
       <div className="grid  gap-[20px] px-[20px]">
         {properties.map((property) => (
           <>
-            <ListingCard
-            className='hidden md:flex'
-              key={property._id}
-              propertyName={property?.name}
-              propertyDisplayImage={property?.displayImage}
-              propertyPrice={property?.price}
-              propertyLocation={property?.location}
-              propertyID={property?._id}
-              propertyDescription={property?.description}
-            />
-
-            <PropertyCard className='md:hidden' key={property._id} property={property} />
+            <div className=" hidden md:flex">
+              <ListingCard
+                key={property._id}
+                propertyName={property?.name}
+                propertyDisplayImage={property?.displayImage}
+                propertyPrice={property?.price}
+                propertyLocation={property?.location}
+                propertyID={property?._id}
+                propertyDescription={property?.description}
+              />
+            </div>
+            <div className="md:hidden">
+              <PropertyCard key={property._id} property={property} />
+            </div>
           </>
         ))}
       </div>
