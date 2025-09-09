@@ -1,7 +1,7 @@
 import { FaArrowDown } from "react-icons/fa";
 const PropertyInfo = () => {
   return (
-    <div className="sectionBg relative h-[50vh] md:min-h-[80vh] py-[30px] px-[16px] flex flex-col items-center justify-center gap-[10px]">
+    <div className="sectionBg relative h-[60vh] md:min-h-[80vh] py-[30px] px-[16px] flex flex-col items-center justify-center gap-[10px]">
       <h3 className="text-gray-400">Acquire a property today</h3>
       <div className="divider"></div>
       <h1 className="text-[30px] w-[400px] text-center">
