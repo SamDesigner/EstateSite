@@ -2,14 +2,14 @@ import Navbar from "../components/Navbar";
 import Showcase from "../components/Showcase/Showcase";
 import HomeBody from "../components/HomeBody/HomeBody";
 import AboutVision from "../components/AboutComponents/AboutVision";
-import HomeLocation from '../components/HomeLocation/HomeLocation'
-import Footer from '../components/Footer/Footer'
+import HomeLocation from "../components/HomeLocation/HomeLocation";
+import Footer from "../components/Footer/Footer";
 
 import AboutCoreValues from "../components/AboutComponents/AboutCoreValues";
 import HomeServices from "../components/HomeServices/HomeServices";
 import WhyChoose from "../components/WhyChoose";
 import PropertyInfo from "../components/PropertyInfo/PropertyInfo";
-import AboutOffice from '../components/AboutComponents/AboutBanner'
+import AboutOffice from "../components/AboutComponents/AboutBanner";
 
 const Home = () => {
   return (
@@ -19,12 +19,12 @@ const Home = () => {
       <PropertyInfo />
       <HomeLocation />
       <div id="about">
-      <HomeBody />
+        <HomeBody />
       </div>
       <AboutVision />
       <WhyChoose />
-      <AboutCoreValues />
       <HomeServices />
+      <AboutCoreValues />
       <AboutOffice />
       <Footer />
     </div>

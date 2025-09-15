@@ -13,7 +13,7 @@ const PropertyInfo = () => {
         market can be tough and confusing. Find out how we can help you find
         your perfect space.
       </p>
-      <div className="absolute bottom-4 font-[200] text-primary flex flex-col items-center justify-center">
+      <div className="absolute bottom-4 font-[200] text-maroon flex flex-col items-center justify-center">
         <p>Find out how</p>
         <FaArrowDown className="animate-bounce " />
       </div>

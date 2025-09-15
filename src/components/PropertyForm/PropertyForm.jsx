@@ -12,6 +12,7 @@ const PropertyForm = ({ onSubmit, initialData = {} }) => {
   const [displayImage, setDisplayImage] = useState(null);
   const [images, setImages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [video, setVideo] = useState(null)
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -23,6 +24,7 @@ const PropertyForm = ({ onSubmit, initialData = {} }) => {
     Object.keys(form).forEach((key) => data.append(key, form[key]));
     if (displayImage) data.append("displayImage", displayImage);
     images.forEach((img) => data.append("images", img));
+    if (video) data.append("video", video);
     try {
       await onSubmit(data);
       showSuccessToast("Property action completed");
@@ -94,6 +96,15 @@ const PropertyForm = ({ onSubmit, initialData = {} }) => {
           multiple
           onChange={(e) => setImages(Array.from(e.target.files))}
           accept="image/*"
+          className="border border-gray-400 p-2 rounded-[5px] bg-white"
+        />
+      </div>
+      <div className="flex flex-col gap-[10px]">
+        <label>Select Video:</label>
+        <input
+          type="file"
+          onChange={(e) => setVideo(e.target.files[0])}
+          accept="video/mp4,video/mov"
           className="border border-gray-400 p-2 rounded-[5px] bg-white"
         />
       </div>

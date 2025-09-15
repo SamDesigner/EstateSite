@@ -50,7 +50,9 @@ const PropertyView = () => {
       <div className="flex flex-col md:flex-row gap-[30px] ">
         <div className="flex-1 flex flex-col gap-[10px]">
           <div>
-            <h1 className="text-[25px] md:text-[40px] font-[600]">{property?.name}</h1>
+            <h1 className="text-[25px] md:text-[40px] font-[600]">
+              {property?.name}
+            </h1>
             <p className="flex flex-col md:flex-row gap-[5px] md:items-center">
               <span className="flex gap-[5px]">
                 <IoLocation /> Location:
@@ -59,9 +61,15 @@ const PropertyView = () => {
             </p>
           </div>
           <div>
-            {
-              property?.listingType === 'sale' ? <span className="bg-green-500 text-white rounded-full text-sm p-[5px]">For Sale</span> : <sale className='bg-purple-600 text-white rounded-full text-sm p-[5px]'>For Lease</sale>
-            }
+            {property?.listingType === "sale" ? (
+              <span className="bg-green-500 text-white rounded-full text-sm p-[5px]">
+                For Sale
+              </span>
+            ) : (
+              <sale className="bg-purple-600 text-white rounded-full text-sm p-[5px]">
+                For Lease
+              </sale>
+            )}
           </div>
           <p className="flex gap-[5px]">
             <span>Price:</span>
@@ -70,7 +78,7 @@ const PropertyView = () => {
                 <TbCurrencyNaira />
               </span>
               {/* {property?.price} */}
-              { property?.price ? property?.price?.toLocaleString() : 'POE'}
+              {property?.price ? property?.price?.toLocaleString() : "POE"}
             </span>
           </p>
           <div>
@@ -80,7 +88,7 @@ const PropertyView = () => {
             <p className="text-justify">{property?.description}</p>
           </div>
           <div className="flex flex-col md:flex-row gap-[10px] mt-[10px]">
-            <div className=" flex-1 " >
+            <div className=" flex-1 ">
               <a href={whatsappLink} target="_blank">
                 <button className="bg-companyGreen p-2 w-full text-white font-[500] flex gap-[5px] items-center justify-center rounded-full">
                   {" "}
@@ -91,7 +99,7 @@ const PropertyView = () => {
                 </button>
               </a>
             </div>
-            <div className=" flex-1 " >
+            <div className=" flex-1 ">
               <Link to="/appointment">
                 <button className=" flex-1 bg-blue-400 w-full text-white p-2 flex gap-[5px] items-center justify-center  rounded-full">
                   <span>
@@ -124,7 +132,22 @@ const PropertyView = () => {
                   />
                 ))}
               </div>
-
+              <div>
+                {property?.video && (
+                  <div className="mt-[30px]">
+                    <h3 className="text-[20px] font-[600] text-companyGreen mb-2">
+                      Property Video
+                    </h3>
+                    <video
+                      controls
+                      className="w-full h-[400px] rounded-lg border border-gray-300"
+                    >
+                      <source src={property.video} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                )}
+              </div>
               <button
                 onClick={open}
                 className="bg-companyGreen p-2 rounded-[5px] text-white w-fit flex items-center text-[14px] gap-[5px] mt-[20px]"

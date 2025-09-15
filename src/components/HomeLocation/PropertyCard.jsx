@@ -16,13 +16,13 @@ const PropertyCard = ({ property }) => {
               alt={property?.name}
               className="h-full w-full object-cover "
             />
-            <div className="absolute  w-[80px] top-[0px] left-[0px]">
+            <div className="absolute  w-[80px] top-[5px] left-[5px]">
               {property?.listingType === "sale" ? (
-                <div className=" w-full  text-gray-[500] bg-primary text-white  text-sm p-[5px]">
+                <div className=" w-full  text-gray-[500] text-center border  bg-white/90 backdrop-blur-sm  opacity-4  text-black  text-sm p-[5px]">
                   For Sale
                 </div>
               ) : (
-                <div className=" w-full bg-maroon text-gray-[500] text-white text-sm p-[5px]">
+                <div className=" w-full bg-white/90 backdrop-blur-sm text-center text-gray-[500] text-black text-sm p-[5px]">
                   For Lease
                 </div>
               )}
