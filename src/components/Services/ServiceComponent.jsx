@@ -10,8 +10,8 @@ const ServiceSubPage = ({
       <div className="flex flex-col gap-[20px] p-[16px] h-full">
         <div className="border border-gray-200 py-[30px] px-[20px] h-full  flex flex-col justify-between">
           <div>
-            <div className="text-primary text-[28px] flex flex-col gap-[40px]">
-              <div className="bg-primary text-white text-[25px] shadow-md flex items-center justify-center h-[50px] text-center w-[50px] rounded-full">
+            <div className="text-[28px] flex flex-col gap-[40px]">
+              <div className="bg-maroon text-white text-[25px] shadow-md flex items-center justify-center h-[50px] text-center w-[50px] rounded-full">
                 {serviceNo}
               </div>
 

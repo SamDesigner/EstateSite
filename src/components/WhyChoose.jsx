@@ -3,10 +3,10 @@ const WhyChoose = () => {
   return (
     <div>
       <div className="max-w-[1440px]  mx-auto py-[100px] bg-white">
-        <div className="p-[20px] flex">
+        <div className="p-[20px] flex flex-col md:flex-row">
           <div className="flex-1">
             <h6 className="text-[12px]">The Big Question</h6>
-            <h1 className="text-[60px]">Why Choose us?</h1>
+            <h1 className="text-[30px] md:text-[40px] lg:text-[60px]">Why Choose us?</h1>
           </div>
 
           <div className="flex-1 flex flex-col gap-[20px] ">

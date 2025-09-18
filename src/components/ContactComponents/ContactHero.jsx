@@ -25,10 +25,10 @@ const ContactHero = () => {
     setIsLoading(true);
     emailjs
       .sendForm(
-        "service_nfcrqip",
-        "template_u3pbyir",
+        "service_zywfv96",
+        "template_pahb6qs",
         form.current,
-        "MltiYLOsvBs_FIcXY"
+        "H5i-SL-T2l4ZMN00Z"
       )
       .then(
         (result) => {
@@ -203,7 +203,7 @@ const ContactHero = () => {
                 ></textarea>
               </div>
             </div>
-            <button className="bg-primary py-[10px] text-white rounded-full flex justify-center items-center gap-[10px]">
+            <button className="bg-maroon py-[10px] text-white rounded-full flex justify-center items-center gap-[10px]">
               {isLoading && <Loader />}
               {!isLoading && <span>Send</span>}
             </button>

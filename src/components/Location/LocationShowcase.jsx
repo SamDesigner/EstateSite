@@ -27,10 +27,11 @@ const LocationShowcase = () => {
         </div> */}
       </div>
       {/* Demo display */}
-      <div className="grid  gap-[20px] px-[20px]">
+      <div className="grid grid-cols-1 lg:grid-cols-2  gap-[20px] px-[20px] pb-[20vh]">
         {properties.map((property) => (
           <>
-            <div className=" hidden md:flex">
+    
+            <div className=" hidden md:flex  ">
               <ListingCard
                 key={property._id}
                 propertyName={property?.name}

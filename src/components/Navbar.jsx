@@ -9,7 +9,7 @@ import { FaXmark } from "react-icons/fa6";
 import NavIcon from "../assets/images/Icons/AAL_MAIN.png";
 import "../App.css";
 import { NavLink } from "react-router-dom";
-
+import { HashLink } from "react-router-hash-link";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -22,7 +22,7 @@ const Navbar = () => {
         </div>
         <div className="hidden md:flex justify-center items-center text-[15px]  text-gray-800 gap-[40px]">
           <NavLink to="/">Home</NavLink>
-          <a className="cursor-pointer" href="#about">About us</a>
+          <HashLink className="cursor-pointer" smooth to="/#about">About us</HashLink>
           <NavLink to="/services">Services</NavLink>
           <NavLink to="/location">Listings</NavLink>
           {/* <NavLink to="/admin/properties">All Properties</NavLink> */}
@@ -30,9 +30,9 @@ const Navbar = () => {
         </div>
         <div className="flex items-center gap-[20px] text-[16px]">
           <div className="hidden md:flex">
-            {/* <NavLink to="/contact">
-              <button className="bg-companyGreen text-white py-[10px] px-[20px] rounded-full hover:bg-green-600">Contact us</button>
-            </NavLink> */}
+            <NavLink to="/contact">
+              <button className="bg-maroon text-white py-[10px] px-[20px] rounded-full hover:bg-red-800">Contact us</button>
+            </NavLink>
           </div>
 
           <div className="md:hidden">

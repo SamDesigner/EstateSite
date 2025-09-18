@@ -5,13 +5,16 @@ const ListingCard = ({
   propertyPrice,
   propertyLocation,
   propertyID,
-  propertyDescription
+  propertyDescription,
 }) => {
   return (
-    <div className="h-[50vh] sectionBg p-2">
+    <div className="h-[30vh] lg:h-[50vh] sectionBg p-2 w-full">
       <div className="flex h-full gap-[20px] ">
         <div className="h-full flex-1">
-          <img className="h-full w-full object-cover" src={propertyDisplayImage} />
+          <img
+            className="h-full w-full object-cover"
+            src={propertyDisplayImage}
+          />
         </div>
         <div className="flex-[2] relative p-[15px]">
           {/* Price and address div */}
@@ -27,9 +30,13 @@ const ListingCard = ({
               <p className="text-[12px]">{propertyLocation}</p>
             </div>
           </div>
-          <div className="text-[14px]">
+          {/* <div className="text-[14px]">
             {propertyDescription}
-          </div>
+          </div> */}
+          {propertyDescription
+            ? propertyDescription.split(" ").slice(0, 20).join(" ") +
+              (propertyDescription.split(" ").length > 20 ? "..." : "")
+            : ""}
           <Link to={`/property/${propertyID}`}>
             <button className="border absolute bottom-0 right-0 border-maroon text-maroon p-2 hover:bg-maroon hover:text-white">
               View Property
