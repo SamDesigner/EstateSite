@@ -107,13 +107,15 @@ const EReceipt = () => {
   };
 
   const removeRow = (id) => {
-    const updatedItems = items.filter(item => item.id !== id);
-    // Renumber items
-    const renumberedItems = updatedItems.map((item, index) => ({
-      ...item,
-      serial: index + 1
-    }));
-    setItems(renumberedItems);
+    if (window.confirm('Are you sure you want to delete this row?')) {
+      const updatedItems = items.filter(item => item.id !== id);
+      // Renumber items
+      const renumberedItems = updatedItems.map((item, index) => ({
+        ...item,
+        serial: index + 1
+      }));
+      setItems(renumberedItems);
+    }
   };
 
   const updateItem = (id, field, value) => {
@@ -129,7 +131,9 @@ const EReceipt = () => {
   };
 
   const clearAllRows = () => {
-    setItems([]);
+    if (window.confirm('Are you sure you want to clear all rows? This action cannot be undone.')) {
+      setItems([]);
+    }
   };
 
   // Signature pad functionality
@@ -258,22 +262,23 @@ const EReceipt = () => {
     <div className="ereceipt-container">
       <div className="invoice-paper">
         {/* Header */}
-        <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 top-meta">
-          <div className="d-flex flex-column flex-sm-row align-items-start align-items-sm-center gap-2 gap-sm-3">
+        <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-4 top-meta">
+          <div className="d-flex flex-column flex-sm-row align-items-start align-items-sm-center gap-3">
             <div className="d-flex flex-column align-items-start">
               <img 
                 id="companyLogo" 
-                className="brand-mark mb-1" 
+                className="brand-mark mb-3" 
                 alt="Company Logo"
                 src={companyLogo || ''}
                 style={{ 
-                  background: companyLogo ? 'transparent' : '#f1f3f5',
-                  borderRadius: '8px'
+                  background: companyLogo ? 'transparent' : 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)',
+                  borderRadius: '12px',
+                  padding: companyLogo ? '0' : '10px'
                 }}
               />
               <input 
-                className="form-control form-control-sm" 
-                style={{ maxWidth: '260px' }}
+                className="form-control" 
+                style={{ maxWidth: '280px', fontSize: '14px' }}
                 placeholder="Client / Customer Business Name"
                 value={clientBusinessName}
                 onChange={(e) => setClientBusinessName(e.target.value)}
@@ -289,15 +294,15 @@ const EReceipt = () => {
             >
               Invoice
             </div>
-            <div className="small mt-2">
-              <span className="fw-semibold">Date:</span> 
-              <span className="ms-1">{new Date().toLocaleDateString('en-GB')}</span>
+            <div className="mt-3" style={{ fontSize: '14px', color: 'var(--text-muted)' }}>
+              <span className="fw-semibold" style={{ color: 'var(--primary-color)' }}>Date:</span> 
+              <span className="ms-2">{new Date().toLocaleDateString('en-GB')}</span>
             </div>
-            <div className="small">
-              <span className="fw-semibold">Ref:</span> 
+            <div className="mt-2" style={{ fontSize: '14px', color: 'var(--text-muted)' }}>
+              <span className="fw-semibold" style={{ color: 'var(--primary-color)' }}>Ref:</span> 
               <input 
-                className="form-control form-control-sm d-inline-block ms-1" 
-                style={{ width: '220px' }}
+                className="form-control d-inline-block ms-2" 
+                style={{ width: '240px', fontSize: '14px' }}
                 placeholder="Enter reference"
                 value={refField}
                 onChange={(e) => setRefField(e.target.value)}
@@ -309,20 +314,33 @@ const EReceipt = () => {
         <hr className="my-4" />
 
         {/* Project / Title line (editable) */}
-        <div className="mb-3">
+        <div className="mb-4">
           <div 
-            className="fw-semibold" 
+            className="fw-bold mb-3" 
             contentEditable 
             suppressContentEditableWarning={true}
-            onBlur={(e) => setDocHeader(e.target.textContent)}
+            onBlur={(e) => {
+              setDocHeader(e.target.textContent);
+              e.target.style.borderColor = 'transparent';
+            }}
+            style={{ 
+              color: 'var(--primary-color)', 
+              fontSize: '18px',
+              border: '2px dashed transparent',
+              padding: '8px',
+              borderRadius: '8px',
+              transition: 'all 0.3s ease'
+            }}
+            onFocus={(e) => e.target.style.borderColor = 'var(--primary-color)'}
           >
             {docHeader}
           </div>
           <input 
-            className="form-control mt-2" 
+            className="form-control" 
             placeholder="Describe the service, job, or property (editable)"
             value={invoiceSubject}
             onChange={(e) => setInvoiceSubject(e.target.value)}
+            style={{ fontSize: '14px', padding: '12px' }}
           />
         </div>
 
@@ -386,11 +404,20 @@ const EReceipt = () => {
                   </td>
                   <td className="text-center">
                     <button 
-                      className="btn btn-link text-danger p-0 remove-row" 
-                      title="Remove"
+                      className="btn btn-outline-danger btn-sm remove-row" 
+                      title="Remove this row"
                       onClick={() => removeRow(item.id)}
+                      style={{ 
+                        width: '32px', 
+                        height: '32px', 
+                        padding: '0',
+                        borderRadius: '50%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                      }}
                     >
-                      <i className="fa fa-trash"></i>
+                      <i className="fa fa-trash" style={{ fontSize: '12px' }}></i>
                     </button>
                   </td>
                 </tr>
@@ -409,30 +436,74 @@ const EReceipt = () => {
           </table>
         </div>
 
-        <div className="d-flex gap-2 flex-wrap mb-3">
-          <button className="btn btn-outline-primary btn-sm" onClick={addRow}>
-            <i className="fa fa-plus"></i> Add Row
+        <div className="action-buttons">
+          <button 
+            className="btn btn-outline-primary btn-sm px-3 py-2" 
+            onClick={addRow}
+            style={{
+              borderRadius: '8px',
+              fontWeight: '500',
+              fontSize: '14px',
+              transition: 'all 0.3s ease',
+              border: '2px solid var(--primary-color)',
+              color: 'var(--primary-color)',
+              background: 'transparent'
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.background = 'var(--primary-color)';
+              e.target.style.color = 'white';
+              e.target.style.transform = 'translateY(-2px)';
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.background = 'transparent';
+              e.target.style.color = 'var(--primary-color)';
+              e.target.style.transform = 'translateY(0)';
+            }}
+          >
+            <i className="fa fa-plus me-2"></i> Add Row
           </button>
-          <button className="btn btn-outline-danger btn-sm" onClick={clearAllRows}>
-            <i className="fa fa-trash"></i> Clear All Rows
+          <button 
+            className="btn btn-outline-danger btn-sm px-3 py-2" 
+            onClick={clearAllRows}
+            style={{
+              borderRadius: '8px',
+              fontWeight: '500',
+              fontSize: '14px',
+              transition: 'all 0.3s ease',
+              border: '2px solid var(--brand-red)',
+              color: 'var(--brand-red)',
+              background: 'transparent'
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.background = 'var(--brand-red)';
+              e.target.style.color = 'white';
+              e.target.style.transform = 'translateY(-2px)';
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.background = 'transparent';
+              e.target.style.color = 'var(--brand-red)';
+              e.target.style.transform = 'translateY(0)';
+            }}
+          >
+            <i className="fa fa-trash me-2"></i> Clear All Rows
           </button>
         </div>
 
         {/* Amount in words */}
         <div className="mb-4">
-          <div className="fw-semibold">AMOUNT IN WORDS:</div>
-          <div className="border rounded p-2 mt-1 bg-light">
+          <div className="fw-semibold mb-2" style={{ color: 'var(--primary-color)', fontSize: '16px' }}>AMOUNT IN WORDS:</div>
+          <div className="amount-words">
             {amountWords}
           </div>
         </div>
 
         {/* Transfer / Bank details */}
         <div className="mb-4">
-          <div className="fw-semibold mb-2">Make all Payments / Transfers as stated herein:</div>
+          <div className="fw-semibold mb-3" style={{ color: 'var(--primary-color)', fontSize: '16px' }}>Make all Payments / Transfers as stated herein:</div>
           <div className="table-responsive">
             <table className="table table-bordered align-middle">
               <thead>
-                <tr className="table-light">
+                <tr>
                   <th style={{ width: '70px' }}>S/N</th>
                   <th>DESCRIPTION</th>
                   <th>DETAILS</th>
@@ -440,19 +511,19 @@ const EReceipt = () => {
               </thead>
               <tbody>
                 <tr>
-                  <td>1</td>
-                  <td>NAME OF BANK</td>
+                  <td className="fw-bold">1</td>
+                  <td className="fw-semibold">NAME OF BANK</td>
                   <td>Fidelity Bank PLC</td>
                 </tr>
                 <tr>
-                  <td>2</td>
-                  <td>ACCOUNT NAME</td>
+                  <td className="fw-bold">2</td>
+                  <td className="fw-semibold">ACCOUNT NAME</td>
                   <td>Asset Allocators Limited</td>
                 </tr>
                 <tr>
-                  <td>3</td>
-                  <td>ACCOUNT NUMBER</td>
-                  <td className="fw-bold">4010886606</td>
+                  <td className="fw-bold">3</td>
+                  <td className="fw-semibold">ACCOUNT NUMBER</td>
+                  <td className="fw-bold" style={{ color: 'var(--primary-color)', fontSize: '16px' }}>4010886606</td>
                 </tr>
               </tbody>
             </table>
@@ -462,14 +533,14 @@ const EReceipt = () => {
         {/* Signatures */}
         <div className="row g-4">
           <div className="col-md-6">
-            <div className="fw-semibold mb-2">Customer's Signature</div>
+            <div className="fw-semibold mb-3" style={{ color: 'var(--primary-color)', fontSize: '16px' }}>Customer's Signature</div>
           </div>
           <div className="col-md-6">
-            <div className="fw-semibold mb-2">For: Asset Allocators Limited</div>
+            <div className="fw-semibold mb-3" style={{ color: 'var(--primary-color)', fontSize: '16px' }}>For: Asset Allocators Limited</div>
             <div className="sig-box">
               <canvas ref={canvasRef} id="sigPad"></canvas>
             </div>
-            <div className="sig-tools mt-2">
+            <div className="sig-tools">
               <button className="btn btn-sm btn-outline-secondary" onClick={clearSignature}>
                 <i className="fa fa-eraser"></i> Clear
               </button>
@@ -498,7 +569,7 @@ const EReceipt = () => {
           </div>
         </div>
 
-        <div className="mt-4 small text-muted">
+        <div className="company-info">
           <div className="fw-bold">Asset Allocators Limited</div>
           <div>27A Providence Street, Lekki, Lagos</div>
           <div>Telephone: 08033064524, 08087185200</div>
