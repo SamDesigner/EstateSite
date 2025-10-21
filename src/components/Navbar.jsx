@@ -25,6 +25,7 @@ const Navbar = () => {
           <HashLink className="cursor-pointer" smooth to="/#about">About us</HashLink>
           <NavLink to="/services">Services</NavLink>
           <NavLink to="/location">Listings</NavLink>
+          <NavLink to="/ereceipt">E-Receipt</NavLink>
           {/* <NavLink to="/admin/properties">All Properties</NavLink> */}
           {/* <NavLink to="/admin/login">Admin Auth</NavLink> */}
         </div>
@@ -56,6 +57,7 @@ const Navbar = () => {
           <a href="#about">About us</a>
           <NavLink to="/services" onClick={() => setIsOpen(false)}>Services</NavLink>
           <NavLink to="/location">Listings</NavLink>
+          <NavLink to="/ereceipt" onClick={() => setIsOpen(false)}>E-Receipt</NavLink>
           {/* <NavLink to="/admin/properties">All Properties</NavLink> */}
           <NavLink to="/contact">Contact us</NavLink>
         </div>

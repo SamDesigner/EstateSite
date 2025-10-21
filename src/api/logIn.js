@@ -13,8 +13,9 @@ export const userLogin = async (email, password) => {
         localStorage.setItem("token", token)
         return response.data
     }catch(error){
-        console.error('There was an error while trying to signup', error);
-        return error
+        console.error('There was an error while trying to login', error);
+        // Return error message if API is not available
+        return { error: 'Login service is currently unavailable. Please try again later.' }
     }
 
 }

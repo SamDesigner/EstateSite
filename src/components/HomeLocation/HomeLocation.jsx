@@ -37,7 +37,7 @@ const HomeLocation = () => {
           subtitle='New and available today'
           title="The latest featured listings"
         />
-      {!properties && <div className="flex flex-col gap-[10px] items-center justify-center"><Loader /><p>Please wait while property is loading...</p></div>}
+      {properties.length === 0 && <div className="flex flex-col gap-[10px] items-center justify-center"><p className="text-gray-500">No properties available at the moment. Please check back later.</p></div>}
       <div className=" w-full flex flex-col md:gap-[60px] px-[20px] ">
         {/* First Row of Properties */}
         <div className="grid grid-cols-1 gap-[20px] md:grid-cols-2 lg:grid-cols-4  w-full">
