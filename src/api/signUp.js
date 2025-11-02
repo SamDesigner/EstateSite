@@ -12,7 +12,8 @@ export const userSignUp = async (name, email, password) => {
         return response.data
     }catch(error){
         console.error('There was an error while trying to signup',error);
-        return error
+        // Return error message if API is not available
+        return { error: 'Signup service is currently unavailable. Please try again later.' }
     }
 
 }

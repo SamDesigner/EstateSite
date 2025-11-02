@@ -10,6 +10,8 @@ export const getProperties = async () => {
     return response.data;
   } catch (error) {
     console.error("There was an error while getting properties", error);
+    // Return empty array if API is not available
+    return [];
   }
 };
 
@@ -22,6 +24,8 @@ export const getProperty = async (id) => {
       "There was an issue while fetching the single Property",
       error
     );
+    // Return null if API is not available
+    return null;
   }
 };
 

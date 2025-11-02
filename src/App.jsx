@@ -21,6 +21,7 @@ import AOS from "aos";
 import Auth from "./Pages/Auth/Auth";
 import Appointment from "./Pages/Appointment";
 import SignUp from "./Pages/Auth/SignUp";
+import EReceipt from "./Pages/EReceipt";
 import "aos/dist/aos.css";
 import ProtectedRoute from "./components/ProtectedRoute";
 
@@ -49,6 +50,8 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/location" element={<Location />} />
           <Route path="/property/:id" element={<PropertyView />} />
+          {/* <Route path="/admin" element={<Auth />} /> */}
+          <Route path="/ereceipt" element={<EReceipt />} />
           <Route path="/admin" element={<Auth />}>
             <Route path="login" element={<Auth />} />
             <Route path="signup" element={<SignUp />} />
