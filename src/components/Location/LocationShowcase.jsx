@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import "./Location.css";
 import PropertyCard from "../HomeLocation/PropertyCard";
 import Loader from "../Loader/Loader";
-import { TiLocation } from "react-icons/ti";
+// import { TiLocation } from "react-icons/ti";
 import usePropertyStore from "../../stores/propertyStore";
 import ListingCard from "../HomeLocation/ListingCard";
 const LocationShowcase = () => {
