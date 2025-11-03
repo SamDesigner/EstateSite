@@ -78,6 +78,7 @@ const PropertyForm = ({ onSubmit, initialData = {} }) => {
           <option value="">-- Select --</option>
           <option value='sale'>For Sale</option>
           <option value='lease'>For Lease</option>
+          <option value='sold out'>Sold Out</option>
         </select>
       </div>
       <div className="flex flex-col gap-[10px]">

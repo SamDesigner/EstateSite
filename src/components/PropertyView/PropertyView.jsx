@@ -11,7 +11,8 @@ import useGeneralStore from "../../stores/useGeneral";
 import PropertyPopup from "../Popup/PropertyPopup";
 import Loader from "../Loader/Loader";
 import { FaPlay, FaPause } from "react-icons/fa";
-import {useRef} from 'react'
+import { useRef } from "react";
+import ReactPlayer from "react-player";
 
 const PropertyView = () => {
   const { id } = useParams();
@@ -20,18 +21,18 @@ const PropertyView = () => {
   const [isLoading, setIsLoading] = useState(false);
   const phoneNumber = +2348033064524;
   const { isOpen, open } = useGeneralStore();
-  const [isPlaying, setIsPlaying] = useState(false);
-  const handlePlayPause = () => {
-    if (!videoRef.current) return;
-    if (isPlaying) {
-      videoRef.current.pause();
-    } else {
-      videoRef.current.play();
-    }
-    setIsPlaying(!isPlaying);
-  };
+  // const [isPlaying, setIsPlaying] = useState(false);
+  // const handlePlayPause = () => {
+  //   if (!videoRef.current) return;
+  //   if (isPlaying) {
+  //     videoRef.current.pause();
+  //   } else {
+  //     videoRef.current.play();
+  //   }
+  //   setIsPlaying(!isPlaying);
+  // };
 
-  const videoRef = useRef(null);
+  // const videoRef = useRef(null);
 
   const message = encodeURIComponent(
     `Hello I am chatting you from the Asset Allocators site, I am instrested in ${property?.name} property located in ${property?.location}`
@@ -129,13 +130,13 @@ const PropertyView = () => {
             <p>Please wait....</p>
           </div>
         ) : (
-          <div className="px-[20px] flex gap-[20px]">
+          <div className="px-[20px] flex flex-col gap-[20px]">
             <img
               className="object-cover h-[90vh] flex-[2]  rounded-xl "
               src={property?.displayImage}
             />
             <div className="flex flex-col items-center gap-[10px]  flex-[1]">
-              <div className="flex flex-col items-center gap-[5px] w-full ">
+              <div className="flex  items-center gap-[5px] w-full overflow-x-scroll ">
                 {property?.images?.slice(0, 3).map((propertyImage, index) => (
                   <img
                     className="h-[150px] w-[300px] object-cover rounded-xl"
@@ -162,8 +163,10 @@ const PropertyView = () => {
               Property Video
             </h3>
             <div className="flex justify-center relative">
+        
               <video
-                ref={videoRef}
+                // ref={videoRef}
+                controls
                 poster={property?.displayImage}
                 className="w-full md:w-[800px] h-[250px] md:h-[450px] rounded-xl border border-gray-200 shadow-md"
               >
@@ -172,7 +175,7 @@ const PropertyView = () => {
               </video>
 
               {/* Custom Play/Pause Button */}
-              <button
+              {/* <button
                 onClick={handlePlayPause}
                 className="absolute inset-0 flex items-center justify-center text-white bg-black/40 hover:bg-black/60 transition rounded-xl"
               >
@@ -181,7 +184,7 @@ const PropertyView = () => {
                 ) : (
                   <FaPlay className="text-4xl md:text-5xl" />
                 )}
-              </button>
+              </button> */}
             </div>
           </div>
         )}

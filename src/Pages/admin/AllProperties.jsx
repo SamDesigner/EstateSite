@@ -80,9 +80,13 @@ const AllProperties = () => {
                   <span className="bg-green-700 text-white rounded-full text-sm p-[5px]">
                     For Sale
                   </span>
-                ) : (
+                ) : property?.listingType === "lease" ? (
                   <sale className="bg-purple-600 text-white rounded-full text-sm p-[5px]">
                     For Lease
+                  </sale>
+                ):(
+                  <sale className="bg-blue-600 text-white rounded-full text-sm p-[5px]">
+                    Sold out
                   </sale>
                 )}
               </div>

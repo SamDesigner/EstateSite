@@ -21,9 +21,13 @@ const PropertyCard = ({ property }) => {
                 <div className=" w-full  text-gray-[500] text-center border  bg-white/90 backdrop-blur-sm  opacity-4  text-black  text-sm p-[5px]">
                   For Sale
                 </div>
-              ) : (
+              ) :  property?.listingType === "lease" ? (
                 <div className=" w-full bg-white/90 backdrop-blur-sm text-center text-gray-[500] text-black text-sm p-[5px]">
                   For Lease
+                </div>
+              ):(
+                 <div className=" w-full bg-white/90 backdrop-blur-sm text-center text-gray-[500] text-black text-sm p-[5px]">
+                  Sold Out
                 </div>
               )}
             </div>
