@@ -10,9 +10,9 @@ import { Link } from "react-router-dom";
 import useGeneralStore from "../../stores/useGeneral";
 import PropertyPopup from "../Popup/PropertyPopup";
 import Loader from "../Loader/Loader";
-import { FaPlay, FaPause } from "react-icons/fa";
-import { useRef } from "react";
-import ReactPlayer from "react-player";
+// import { FaPlay, FaPause } from "react-icons/fa";
+// import { useRef } from "react";
+// import ReactPlayer from "react-player";
 
 const PropertyView = () => {
   const { id } = useParams();
