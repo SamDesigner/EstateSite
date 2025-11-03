@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { FaLocationDot } from "react-icons/fa6";
+import { TbCurrencyNaira } from "react-icons/tb";
 // import Loader from "../Loader/Loader";
 const PropertyCard = ({ property }) => {
   // const BASE_URL = import.meta.env.VITE_API_URL;
@@ -38,8 +39,9 @@ const PropertyCard = ({ property }) => {
         <div className="py-[10px]">
           <div className="flex text-[15px] font-[500] items-center justify-between">
             <h3 className="">{property?.name}</h3>
-
-            {property?.price ? property?.price?.toLocaleString() : "POE"}
+            <div className="flex items-center gap-[5px]">
+               <TbCurrencyNaira /> {property?.price ? property?.price?.toLocaleString() : "POE"}
+            </div>
           </div>
 
           <p className="flex gap-[5px] items-center text-[12px] text-gray-500">
