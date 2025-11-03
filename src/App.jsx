@@ -1,6 +1,6 @@
 import Home from "./Pages/Home";
 import Contact from "./Pages/Contact";
-// import AuthLayout from "./layouts/AuthLayout";
+import AuthLayout from "./layouts/AuthLayout";
 // import Showcase from "./components/Showcase/Showcase"
 import Services from "./Pages/Services";
 import {
@@ -52,7 +52,8 @@ function App() {
           <Route path="/property/:id" element={<PropertyView />} />
           {/* <Route path="/admin" element={<Auth />} /> */}
           <Route path="/ereceipt" element={<EReceipt />} />
-          <Route path="/admin" element={<Auth />}>
+          <Route path="/admin" element={<AuthLayout />}>
+            <Route index element={<Auth />} />
             <Route path="login" element={<Auth />} />
             <Route path="signup" element={<SignUp />} />
           </Route>
