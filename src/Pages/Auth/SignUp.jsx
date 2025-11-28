@@ -3,7 +3,8 @@ import { userSignUp } from "../../api/signUp";
 import { useState } from "react";
 import Loader from "../../components/Loader/Loader";
 import Swal from "sweetalert2";
-import { showSuccessToast, showErrorToast } from "../../utils/toast";
+import {signup} from '@/api/Auth'
+// import { showSuccessToast, showErrorToast } from "../../utils/toast";
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
@@ -12,43 +13,33 @@ const SignUp = () => {
   const [inputError, setInputError] = useState(false);
   const navigate = useNavigate();
 
-  const signUpAction = async (e) => {
-    e.preventDefault();
-    if (!username || !password || !email) {
-      setInputError(true);
-      return;
+const signUpAction = async (e) => {
+  e.preventDefault();
+  if (!username || !password || !email) {
+    setInputError(true);
+    return;
+  }
+  setIsLoading(true);
+
+  try {
+    // Call Firebase signup
+    const user = await signup(email, password);
+
+    if (user) {
+      // Optionally, update display name
+      await user.updateProfile({ displayName: username });
+
+      // Navigate to login page
+      navigate("/admin/login");
     }
-    setIsLoading(true);
+  } catch (error) {
+    console.log("Signup error:", error);
+   
+  } finally {
+    setIsLoading(false);
+  }
+};
 
-    try {
-      const response = await userSignUp(username, email, password);
-      console.log("This is the response while signing up", response);
-      if (
-        response?.response?.status === 400 ||
-        response?.response?.status === 401
-      ) {
-        showErrorToast(response?.response?.data?.message);
-      } else {
-        showSuccessToast(response?.response?.data?.message);
-      }
-
-      if (response && response.token) {
-        navigate("/admin/login");
-      }
-
-      // alert( response.data.message)
-    } catch (error) {
-      console.log("This is the error I got", error);
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: error || "Something went wrong!",
-      });
-      showErrorToast();
-    } finally {
-      setIsLoading(false);
-    }
-  };
   return (
     <div>
       <div className="max-w-[1440px] mx-auto flex h-[100vh]">

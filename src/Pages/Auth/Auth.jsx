@@ -1,10 +1,10 @@
 import "./Auth.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { userLogin } from "../../api/logIn";
+// import { userLogin } from "../../api/logIn";
 import Loader from "../../components/Loader/Loader";
-import { showSuccessToast, showErrorToast } from "../../utils/toast";
-
+// import { showSuccessToast, showErrorToast } from "../../utils/toast";
+import {login} from '@/api/Auth'
 const Auth = () => {
   const [form, setForm] = useState({
     email: "",
@@ -16,32 +16,33 @@ const Auth = () => {
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
-  const loginAction = async (e) => {
-    e.preventDefault();
-    if (!form.email || !form.password) {
-      setInputError(true);
-      return;
+ const loginAction = async (e) => {
+  e.preventDefault();
+
+  if (!form.email || !form.password) {
+    setInputError(true);
+    return;
+  }
+
+  setIsLoading(true);
+
+  try { 
+    // Call Firebase login
+    const user = await login(form.email, form.password);
+
+    if (user) {
+      // Success already handled via SweetAlert in Auth.js
+      // Navigate to dashboard
+      navigate("/admin/Dashboard");
     }
-    setIsLoading(true);
-    try {
-      const response = await userLogin(form.email, form.password);
-      console.log("This was the error while trying to login", response);
-      if (
-        response?.response?.status === 400 ||
-        response?.response?.status === 401
-      ) {
-        showErrorToast(response?.response?.data?.message);
-      } else {
-        showSuccessToast(response.message);
-        navigate("/admin/Dashboard");
-      }
-    } catch (error) {
-      console.log("This is the error response from login", error);
-      showErrorToast(error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  } catch (error) {
+    console.log("Login error:", error);
+    // SweetAlert handles errors in Auth.js
+  } finally {
+    setIsLoading(false);
+  }
+};
+
   return (
     <div className="h-full">
       <div className="flex flex-col items-center w-full gap-[30px] justify-center h-full">

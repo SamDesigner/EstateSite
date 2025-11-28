@@ -60,12 +60,21 @@ function App() {
           {/* <Route path="/admin/login" element={<Auth />} />
           <Route path="/admin/signup" element={<SignUp />} /> */}
           <Route path="/appointment" element={<Appointment />} />
-          <Route path="/admin/Dashboard" element={<ProtectedRoute />}>
+          {/* <Route path="/admin/Dashboard" element={<ProtectedRoute />}>
             <Route element={<Dashboard />}>
               <Route index element={<div />} />
               <Route path="updateProperty/:id" element={<UpdateProperty />} />
               <Route path="createProperty" element={<CreateProperty />} />
               <Route path="properties" element={<AllProperties />} />
+            </Route>
+          </Route> */}
+          <Route path="/admin" element={<ProtectedRoute />}>
+            <Route path="Dashboard" element={<Dashboard />}>
+              <Route index element={null} />{" "}
+              {/* Optional: default dashboard content */}
+              <Route path="createProperty" element={<CreateProperty />} />
+              <Route path="properties" element={<AllProperties />} />
+              <Route path="updateProperty/:id" element={<UpdateProperty />} />
             </Route>
           </Route>
         </Routes>
