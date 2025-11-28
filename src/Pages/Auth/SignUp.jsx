@@ -54,7 +54,7 @@ const SignUp = () => {
       <div className="max-w-[1440px] mx-auto flex h-[100vh]">
         <div className="flex flex-col items-center w-full gap-[30px] justify-center h-full">
           <div className="flex flex-col items-center">
-            <h1 className="text-black text-companyGreen text-[30px] font-[800]">
+            <h1 className="text-black  text-[30px] font-[800]">
               ASSET ALOCATORS
             </h1>
             <h4 className="text-[20px]">Sign Up</h4>
