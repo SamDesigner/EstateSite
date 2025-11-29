@@ -56,51 +56,53 @@ const PropertyView = () => {
     getSingleProperty();
   }, [id]);
   return (
-    <div className="pt-[10vh] pb-[150px] ">
+    <div className="pt-[50px] pb-[150px] ">
       {/* <h1>{property?.images}</h1> */}
       {isOpen && <PropertyPopup data={property?.images} />}
-      <div className="pb-[50px] bg-maroon py-[40px] px-[20px] text-white flex justify-between ">
-        <div>
-          <h1 className=" text-[40px] text-white font-bold ">
-            {property?.name}
-          </h1>
-          <p className="flex flex-col md:flex-row gap-[5px] md:items-center">
-            <span className="flex gap-[5px]">
-              <IoLocation /> Location:
-            </span>{" "}
-            {property?.location}
-          </p>
-          <div className="flex flex-col md:flex-row gap-[10px] mt-[10px]">
-            <div className="">
-              <a href={whatsappLink} target="_blank">
-                <button className="border p-2  text-white font-[500] flex gap-[5px] items-center justify-center rounded-full">
-                  {" "}
-                  <span className="text-[20px]">
-                    <IoLogoWhatsapp />
-                  </span>{" "}
-                  <span>Text us on Whatsapp</span>
-                </button>
-              </a>
-            </div>
-            <div className="">
-              <Link to="/appointment">
-                <button className="border  w-full text-white p-2 flex gap-[5px] items-center justify-center  rounded-full">
-                  <span>
-                    <FaRegAddressBook />
-                  </span>{" "}
-                  Book an Appointment
-                </button>
-              </Link>
+      <div className=" bg-maroon ">
+        <div className="pb-[50px] max-w-[1440px] mx-auto py-[40px] px-[20px] text-white flex justify-between ">
+          <div>
+            <h1 className=" text-[40px] text-white font-bold ">
+              {property?.name}
+            </h1>
+            <p className="flex flex-col md:flex-row gap-[5px] md:items-center">
+              <span className="flex gap-[5px]">
+                <IoLocation /> Location:
+              </span>{" "}
+              {property?.location}
+            </p>
+            <div className="flex flex-col md:flex-row gap-[10px] mt-[10px]">
+              <div className="">
+                <a href={whatsappLink} target="_blank">
+                  <button className="border p-2  text-white font-[500] flex gap-[5px] items-center justify-center rounded-full">
+                    {" "}
+                    <span className="text-[20px]">
+                      <IoLogoWhatsapp />
+                    </span>{" "}
+                    <span>Text us on Whatsapp</span>
+                  </button>
+                </a>
+              </div>
+              <div className="">
+                <Link to="/appointment">
+                  <button className="border  w-full text-white p-2 flex gap-[5px] items-center justify-center  rounded-full">
+                    <span>
+                      <FaRegAddressBook />
+                    </span>{" "}
+                    Book an Appointment
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-        <div>
-          <p className="flex items-center text-[30px] font-bold">
-            <span className="text-[20px]">
-              <TbCurrencyNaira />
-            </span>
-            {property?.price ? property?.price?.toLocaleString() : "POE"}
-          </p>
+          <div>
+            <p className="flex items-center text-[30px] font-bold">
+              <span className="text-[20px]">
+                <TbCurrencyNaira />
+              </span>
+              {property?.price ? property?.price?.toLocaleString() : "POE"}
+            </p>
+          </div>
         </div>
       </div>
       <div className="flex flex-col gap-[30px] ">
@@ -116,12 +118,21 @@ const PropertyView = () => {
               </sale>
             )}
           </div> */}
+          <div className="flex max-w-[1440px] mx-auto  w-full px-5 py-10">
+            <div className="h-[400px] min-w-[300px]">
+              <img
+                className="object-cover h-full w-full  rounded-xl "
+                src={property?.displayImage}
+              />
+            </div>
 
-          <div className="px-[20px] py-[50px] flex flex-col gap-[20px]">
-            <h3 className="text-[20px] font-[600] text-maroon">
-              Property Description
-            </h3>
-            <p className="text-justify">{property?.description}</p>
+            <div className="px-[20px] py-[50px] flex flex-col gap-[20px]">
+              <h3 className="text-[20px] font-[600] text-maroon">
+                Property Description
+              </h3>
+              <p className="text-justify">{property?.description}</p>
+           
+            </div>
           </div>
         </div>
         {isLoading ? (
@@ -130,11 +141,7 @@ const PropertyView = () => {
             <p>Please wait....</p>
           </div>
         ) : (
-          <div className="px-[20px] flex flex-col gap-[20px]">
-            <img
-              className="object-cover h-[90vh] flex-[2]  rounded-xl "
-              src={property?.displayImage}
-            />
+          <div className="flex flex-col gap-[20px] max-w-[1440px] mx-auto px-5 w-full">
             <div className="flex flex-col items-center gap-[10px]  flex-[1]">
               <div className="flex  items-center gap-[5px] w-full overflow-x-scroll ">
                 {property?.images?.slice(0, 3).map((propertyImage, index) => (
@@ -158,12 +165,11 @@ const PropertyView = () => {
       </div>
       <div>
         {property?.video && (
-          <div className="mt-[40px] px-[20px] flex flex-col gap-[15px]">
+          <div className="mt-[40px] px-[20px] flex flex-col items-center  gap-10 w-full max-w-[1440px] mx-auto">
             <h3 className="text-xl md:text-2xl font-semibold text-maroon border-b pb-2 w-fit">
-              Property Video
+             Check Out The Property Video
             </h3>
             <div className="flex justify-center relative">
-        
               <video
                 // ref={videoRef}
                 controls
