@@ -1,107 +1,124 @@
-import "./Auth.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-// import { userLogin } from "../../api/logIn";
 import Loader from "../../components/Loader/Loader";
-// import { showSuccessToast, showErrorToast } from "../../utils/toast";
-import {login} from '@/api/Auth'
+import { login } from "@/api/Auth";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 const Auth = () => {
   const [form, setForm] = useState({
     email: "",
     password: "",
   });
+
   const [inputError, setInputError] = useState(false);
-  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+    setInputError(false);
   };
- const loginAction = async (e) => {
-  e.preventDefault();
 
-  if (!form.email || !form.password) {
-    setInputError(true);
-    return;
-  }
+  const loginAction = async (e) => {
+    e.preventDefault();
 
-  setIsLoading(true);
-
-  try { 
-    // Call Firebase login
-    const user = await login(form.email, form.password);
-
-    if (user) {
-      // Success already handled via SweetAlert in Auth.js
-      // Navigate to dashboard
-      navigate("/admin/Dashboard");
+    if (!form.email || !form.password) {
+      setInputError(true);
+      return;
     }
-  } catch (error) {
-    console.log("Login error:", error);
-    // SweetAlert handles errors in Auth.js
-  } finally {
-    setIsLoading(false);
-  }
-};
+
+    setIsLoading(true);
+
+    try {
+      const user = await login(form.email, form.password);
+
+      if (user) {
+        navigate("/admin/Dashboard");
+      }
+    } catch (error) {
+      console.log("Login error:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
-    <div className="h-full">
-      <div className="flex flex-col items-center w-full gap-[30px] justify-center h-full">
-        <div className="flex flex-col items-center">
-          <h1 className="text-black text-companyGreen text-[30px] font-[800]">
-            ASSET ALOCATORS
+    <div className="h-full flex items-center justify-center px-4">
+      <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-8 space-y-8 transition-all duration-300">
+        {/* Header */}
+        <div className="text-center space-y-2">
+          <h1 className="text-3xl font-extrabold tracking-tight text-gray-800">
+            ASSET ALLOCATORS
           </h1>
-          <h4 className="text-[20px]">Log In</h4>
+          <p className="text-gray-500 text-sm">Welcome back 👋</p>
         </div>
 
-        <form
-          onSubmit={loginAction}
-          className="w-[80%] mx-auto flex flex-col gap-[40px]"
-        >
-          <div className="flex flex-col gap-[20px]">
-            <div className="flex flex-col gap-[10px] w-full">
-              <label className="text-gray-400 text-[14px]">Email</label>
-              <input
-                name="email"
-                className="p-[10px] border border-gray-400 border-1 rounded-[5px]"
-                type="text"
-                onChange={handleChange}
-                placeholder="johndoe@mail.com"
-              />
-            </div>
-            <div className="flex flex-col gap-[10px] w-full">
-              <label className="text-gray-400 text-[14px]">Password</label>
+        {/* Form */}
+        <form onSubmit={loginAction} className="space-y-6">
+          {/* Email */}
+          <div className="space-y-2">
+            <label className="text-sm font-medium text-gray-600">
+              Email Address
+            </label>
+            <input
+              name="email"
+              type="email"
+              placeholder="johndoe@mail.com"
+              onChange={handleChange}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-companyGreen focus:border-companyGreen transition duration-200"
+            />
+          </div>
+
+          {/* Password */}
+          <div className="space-y-2">
+            <label className="text-sm font-medium text-gray-600">
+              Password
+            </label>
+            <div className="relative">
               <input
                 name="password"
-                className="p-[10px] border border-gray-400 border-1 rounded-[5px]"
-                type="password"
-                placeholder="******"
+                type={showPassword ? "text" : "password"}
+                placeholder="••••••••"
                 onChange={handleChange}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-companyGreen focus:border-companyGreen transition duration-200"
               />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-companyGreen transition duration-200"
+              >
+                {showPassword ? <FiEyeOff size={20} /> : <FiEye size={20} />}
+              </button>
             </div>
           </div>
-          <div>
-            {inputError && (
-              <p className="text-red-600 py-[10px]">
-                Kindly Fill all fields. Before proceeding
-              </p>
-            )}
-            <button className="bg-companyGreen rounded-full  text-white w-full p-[10px] rounded-[5px] hover:opacity-[0.9]">
-              {isLoading ? <Loader /> : <span>Log In</span>}
-            </button>
-          </div>
-          <div>
-            {/* <p className="text-center text-companyGreen font-[500]">
-                  Forgot Password?
-                </p> */}
-            {/* <Link to="/admin/signup">Or Sign Up</Link> */}
-            <p className="text-center font-[500]">
-              <span>Don't have an account?</span>{" "}
-              <span className="text-companyGreen">
-                <Link to={"/admin/signup"}>Sign Up</Link>
-              </span>
+
+          {/* Error Message */}
+          {inputError && (
+            <p className="text-red-500 text-sm bg-red-50 p-3 rounded-lg">
+              Please fill in all fields before proceeding.
             </p>
-          </div>
+          )}
+
+          {/* Button */}
+          <button
+            type="submit"
+            disabled={isLoading}
+            className="w-full bg-maroon text-white py-3 rounded-lg font-semibold hover:opacity-90 active:scale-[0.98] transition-all duration-200 flex items-center justify-center"
+          >
+            {isLoading ? <Loader /> : "Log In"}
+          </button>
         </form>
+
+        {/* Footer */}
+        <p className="text-center text-sm text-gray-500">
+          Don’t have an account?{" "}
+          <Link
+            to="/admin/signup"
+            className="text-maroon font-semibold hover:underline"
+          >
+            Sign Up
+          </Link>
+        </p>
       </div>
     </div>
   );

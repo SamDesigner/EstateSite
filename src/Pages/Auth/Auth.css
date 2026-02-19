@@ -1,7 +1,12 @@
 
+.auth-background {
+  /* Full screen gradient */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 
-.bg_image{
-    background: linear-gradient(rgba(5, 52, 8, 0.7) , rgba(0,0,0,0.7)),url('../../assets/images/loginStreet.jpg');
-    background-position: bottom;
-    background-size: cover;
+  /* Linear gradient */
+  background: linear-gradient(135deg, #de594a 0%, #c54822 50%, #2e2101 100%);
 }

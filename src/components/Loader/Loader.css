@@ -9,7 +9,7 @@
 /* The spinner itself */
 .loader {
   border: 5px solid #f3f3f3; /* Light grey background */
-  border-top: 5px solid rgb(49, 145, 119); /* Blue foreground */
+  border-top: 5px solid rgb(145, 121, 49); /* Blue foreground */
   border-radius: 50%;
   width: 30px;  
   height: 30px;
